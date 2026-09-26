@@ -11,18 +11,59 @@ const { locale, active, path = '' } = Astro.props as Props;
 const other = otherLocale(locale);
 ---
 <header class="site-header">
-  <a href={localeHref(locale)} class="logo">Digital Forensics &amp; Security Lab</a>
-  <nav class="site-nav" aria-label={locale === 'ko' ? '주 메뉴' : 'Main menu'}>
-    {NAV_ITEMS.map((item) => (
-      <a
-        href={localeHref(locale, item.path)}
-        class={`${item.key === active ? 'active' : ''} ${item.key === 'join' ? 'recruit' : ''}`}
-      >
-        {locale === 'ko' ? item.ko : item.en}
+  <div class="wrap header-inner">
+    <a href={localeHref(locale)} class="logo">Digital Forensics &amp; Security Lab</a>
+    <button
+      type="button"
+      class="nav-toggle"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label={locale === 'ko' ? '메뉴 열기' : 'Open menu'}
+    >
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label={locale === 'ko' ? '주 메뉴' : 'Main menu'}>
+      {NAV_ITEMS.map((item) => (
+        <a
+          href={localeHref(locale, item.path)}
+          class={`${item.key === active ? 'active' : ''} ${item.key === 'join' ? 'recruit' : ''}`}
+        >
+          {locale === 'ko' ? item.ko : item.en}
+        </a>
+      ))}
+      <a href={localeHref(other, path)} class="lang" hreflang={other} lang={other}>
+        {other === 'en' ? 'EN' : 'KO'}
       </a>
-    ))}
-    <a href={localeHref(other, path)} class="lang" hreflang={other} lang={other}>
-      {other === 'en' ? 'EN' : 'KO'}
-    </a>
-  </nav>
+    </nav>
+    <noscript>
+      <style>
+        .nav-toggle { display: none !important; }
+        nav.site-nav {
+          display: flex !important;
+          position: static !important;
+          flex-direction: column !important;
+          box-shadow: none !important;
+        }
+      </style>
+    </noscript>
+  </div>
 </header>
+
+<script>
+  const headerEls = document.querySelectorAll('.nav-toggle');
+  headerEls.forEach((btn) => {
+    const nav = btn.closest('.header-inner')?.querySelector('.site-nav');
+    if (!nav) return;
+    btn.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        (btn as HTMLElement).focus();
+      }
+    });
+  });
+</script>

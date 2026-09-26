@@ -12,19 +12,25 @@ const publications = getPublications();
   title="DFS Lab | Digital Forensics & Security Lab"
   description="Digital Forensics & Security Lab (DFSL) at Mokwon University. We locate data left on digital devices and services, and verify whether it holds up as evidence."
 >
-  <section class="hero wrap">
-    <h1>Where Do Digital Traces Live,<br />and What Do They Look Like?</h1>
-    <p class="lede">We locate the data left behind on digital devices and services, and verify whether it holds up as evidence.</p>
-  </section>
   <div class="wrap">
+    <section class="hero">
+      <h1>Where Do Digital Traces Live,<br />and What Do They Look Like?</h1>
+      <p class="lede">We locate the data left behind on digital devices and services, and verify whether it holds up as evidence.</p>
+    </section>
     <ResearchCardGrid locale="en" />
     <a href="/en/research" class="more-link">All research topics and {publications.length} publications</a>
   </div>
 </BaseLayout>
 
 <style>
-  .hero { padding-top: 48px; max-width: 900px; }
-  .lede { font-size: 18px; line-height: 1.7; color: var(--text-muted-2); margin: 0; }
+  .hero { padding-top: 16px; padding-bottom: 24px; max-width: 900px; }
+  @media (min-width: 768px) {
+    .hero { padding-top: 32px; padding-bottom: 40px; }
+  }
+  .lede { font-size: 16px; line-height: 1.7; color: var(--text-muted-2); margin: 0; }
+  @media (min-width: 768px) {
+    .lede { font-size: 18px; }
+  }
   .more-link {
     display: inline-block;
     margin: 32px 0 56px;
