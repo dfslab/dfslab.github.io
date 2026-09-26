@@ -1,0 +1,60 @@
+---
+interface Pub {
+  id: string;
+  type: 'journal' | 'conference' | 'misc';
+  authors: string;
+  title: string;
+  venue: string;
+  year: number;
+  award?: string;
+  url?: string;
+}
+interface Props {
+  locale: 'ko' | 'en';
+  publications: Pub[];
+}
+const { locale, publications } = Astro.props as Props;
+const isKo = locale === 'ko';
+
+const GROUP_LABEL: Record<string, string> = isKo
+  ? { journal: '학술지 논문', conference: '학술대회 발표', misc: '기타' }
+  : { journal: 'Journal Article', conference: 'Conference', misc: 'Misc' };
+
+const order: Array<'journal' | 'conference' | 'misc'> = ['journal', 'conference', 'misc'];
+const groups = order.map((t) => ({ type: t, items: publications.filter((p) => p.type === t) }));
+---
+<div class="pub-groups">
+  {groups.map((g) => (
+    <section class="pub-group">
+      <h2>{GROUP_LABEL[g.type]} <span class="count">({g.items.length})</span></h2>
+      <ol class="pub-list">
+        {g.items.map((p) => (
+          <li class="pub-item">
+            <span class="pub-authors">{p.authors}</span>,
+            {' '}
+            {p.url ? (
+              <a href={p.url} target="_blank" rel="noopener noreferrer">&ldquo;{p.title},&rdquo;</a>
+            ) : (
+              <span class="pub-title">&ldquo;{p.title},&rdquo;</span>
+            )}
+            {' '}
+            <em class="pub-venue">{p.venue}</em>, {p.year}.
+            {p.award && <span class="badge award">{p.award}</span>}
+          </li>
+        ))}
+      </ol>
+    </section>
+  ))}
+</div>
+
+<style>
+  .pub-group { margin-bottom: 40px; }
+  .pub-group h2 { font-size: 18px; }
+  .count { color: var(--text-muted); font-weight: 400; font-size: 14px; }
+  .pub-list { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  .pub-item { font-size: 14px; line-height: 1.7; color: var(--text-muted-2); padding-bottom: 14px; border-bottom: 1px solid var(--border-soft); }
+  .pub-authors { color: var(--text); font-weight: 500; }
+  .pub-title { color: var(--text); }
+  .pub-venue { font-style: normal; color: var(--text-muted); }
+  .badge.award { margin-left: 8px; color: var(--link); border-color: var(--link); }
+</style>

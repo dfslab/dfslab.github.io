@@ -1,0 +1,52 @@
+---
+interface Project {
+  id: string;
+  status: 'ongoing' | 'closed';
+  title: string;
+  period: string;
+  agency: string;
+  role: string;
+}
+interface Props {
+  locale: 'ko' | 'en';
+  projects: Project[];
+}
+const { locale, projects } = Astro.props as Props;
+const isKo = locale === 'ko';
+const ongoing = projects.filter((p) => p.status === 'ongoing');
+const closed = projects.filter((p) => p.status === 'closed');
+---
+<section class="proj-group">
+  <h2>{isKo ? '진행 중' : 'In Progress'} <span class="count">({ongoing.length})</span></h2>
+  <ul class="proj-list">
+    {ongoing.map((p) => (
+      <li class="proj-item">
+        <span class="badge ongoing">{isKo ? '진행' : 'Ongoing'}</span>
+        <span class="proj-title">{p.title}</span>
+        <span class="proj-meta">({p.period}, {p.agency}, {p.role})</span>
+      </li>
+    ))}
+  </ul>
+</section>
+<section class="proj-group">
+  <h2>{isKo ? '종료' : 'Closed'} <span class="count">({closed.length})</span></h2>
+  <ul class="proj-list">
+    {closed.map((p) => (
+      <li class="proj-item">
+        <span class="badge">{isKo ? '종료' : 'Closed'}</span>
+        <span class="proj-title">{p.title}</span>
+        <span class="proj-meta">({p.period}, {p.agency}, {p.role})</span>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .proj-group { margin-bottom: 36px; }
+  .proj-group h2 { font-size: 18px; }
+  .count { color: var(--text-muted); font-weight: 400; font-size: 14px; }
+  .proj-list { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  .proj-item { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; padding-bottom: 14px; border-bottom: 1px solid var(--border-soft); font-size: 15px; }
+  .proj-title { color: var(--text); font-weight: 500; }
+  .proj-meta { color: var(--text-muted); font-size: 13px; }
+</style>

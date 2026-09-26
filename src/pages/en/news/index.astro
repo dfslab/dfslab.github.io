@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allNews = await getCollection('news');
+allNews.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+function formatDate(d: Date) {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+---
+<BaseLayout
+  locale="en"
+  active="news"
+  path="news"
+  title="News | DFS Lab"
+  description={`DFS Lab news (${allNews.length} items)`}
+>
+  <div class="wrap">
+    <h1>News</h1>
+    <p class="intro">{allNews.length} items. English summaries below are draft translations pending review.</p>
+    <ol class="news-list">
+      {allNews.map((item) => (
+        <li class="news-item">
+          <time datetime={item.data.date.toISOString()} class="mono">{formatDate(item.data.date)}</time>
+          <h2>{item.data.title_en}</h2>
+          {item.data.summary_en && <p>{item.data.summary_en}</p>}
+          {item.data.link && (
+            <a href={item.data.link} target="_blank" rel="noopener noreferrer" class="news-link">Related link</a>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</BaseLayout>
+
+<style>
+  .intro { margin-bottom: 32px; }
+  .news-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 28px; }
+  .news-item { padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+  .news-item time { display: block; font-size: 13px; color: var(--link); margin-bottom: 6px; }
+  .news-item h2 { font-size: 18px; margin: 0 0 10px; }
+  .news-item p { margin: 0 0 10px; font-size: 15px; }
+  .news-link { font-weight: 600; font-size: 14px; }
+</style>

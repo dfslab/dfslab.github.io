@@ -1,0 +1,43 @@
+# DFS Lab 구성원 목록
+# 출처: https://sites.google.com/view/dfslab/member (2026-09-26 curl 수집)
+# affiliation_en/experience_en/education_en은 원문(영문 사이트) 그대로.
+# affiliation_ko/experience_ko/education_ko는 팀장이 새로 옮긴 국문 번역이며 draft: true(소장 검토 대상).
+# 교수 직함 옆 "Director, DFSL"(직역 시 "실장")은 조직 호칭 혼선을 피해 국문판에서 제외함(정팀장 판단, 소장 보고 대상). 영문판은 원문 그대로 유지.
+draft_ko_translation: true
+professor:
+  name_ko: "신지호"
+  name_en: "Jiho Shin, Ph.D."
+  email: "suchme@gmail.com"
+  affiliation_ko:
+    - "조교수, 목원대학교 컴퓨터융합학부"
+  affiliation_en:
+    - "Assistant Professor, Division of Computer Science Convergence, Mokwon University"
+  experience_ko:
+    - "연구위원, 치안정책연구소 사이버범죄연구센터"
+    - "연구경찰관, 경찰대학교 국제사이버범죄연구센터"
+    - "사이버범죄수사관 및 포렌식분석관, 경기남부지방경찰청"
+  experience_en:
+    - "Research Fellow, Cyber Crime Research Center, Police Science Institute"
+    - "Research Police Officer, International Cybercrime Research Center, Korean National Police Univ."
+    - "Cybercrime Investigator & Forensics Analyst, Gyeonggi Nambu Provincial Police Agency"
+  education_ko:
+    - "박사, 순천향대학교 일반대학원 정보보호공학과"
+    - "석사, 고려대학교 정보보호대학원 디지털포렌식학과"
+  education_en:
+    - "Ph.D., Department of Information Security & Engineering, Graduate School, Soonchunhyang University"
+    - "M.S., Department of Digital Forensics, School of Cybersecurity, Korea University"
+researchers:
+  - name_ko: "신예준"
+    name_en: "Yejun Shin"
+    status_ko: "학부연구생"
+    status_en: "Undergraduate Course"
+    interests_ko: ["디지털포렌식", "웹 해킹"]
+    interests_en: ["Digital forensics", "Web Hacking"]
+    email: "xk17sin9@gmail.com"
+  - name_ko: "문준수"
+    name_en: "Moon Junsu"
+    status_ko: "학부연구생"
+    status_en: "Undergraduate Course"
+    interests_ko: ["디지털포렌식", "제어시스템(ICS) 보안"]
+    interests_en: ["Digital forensics", "ICS Security"]
+    email: "joon27310@gmail.com"

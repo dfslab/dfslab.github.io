@@ -1,0 +1,37 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  locale: 'ko' | 'en';
+  active?: string;
+  path?: string;
+  title: string;
+  description: string;
+}
+const { locale, active, path = '', title, description } = Astro.props as Props;
+---
+<!doctype html>
+<html lang={locale === 'ko' ? 'ko' : 'en'}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap"
+  />
+</head>
+<body>
+  <a href="#main" class="skip-link">{locale === 'ko' ? '본문으로 건너뛰기' : 'Skip to content'}</a>
+  <Header locale={locale} active={active} path={path} />
+  <main id="main">
+    <slot />
+  </main>
+  <Footer locale={locale} />
+</body>
+</html>

@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ResearchCardGrid from '../components/ResearchCardGrid.astro';
+import { getPublications } from '../lib/data.js';
+
+const publications = getPublications();
+---
+<BaseLayout
+  locale="ko"
+  active=""
+  path=""
+  title="DFS Lab | Digital Forensics & Security Lab"
+  description="목원대학교 디지털포렌식 및 보안 연구실(DFSL). 디지털 기기와 서비스에 남은 데이터를 찾아내고, 증거로 쓸 수 있는지 검증합니다."
+>
+  <section class="hero wrap">
+    <h1>디지털 흔적은 어디에,<br />어떤 모양으로 남는가</h1>
+    <p class="lede">디지털 기기와 서비스에 남은 데이터를 찾아내고, 증거로 쓸 수 있는지 검증합니다.</p>
+  </section>
+  <div class="wrap">
+    <ResearchCardGrid locale="ko" />
+    <a href="/research" class="more-link">연구 주제 전체와 논문 {publications.length}편</a>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero { padding-top: 48px; max-width: 900px; }
+  .lede { font-size: 18px; line-height: 1.7; color: var(--text-muted-2); margin: 0; }
+  .more-link {
+    display: inline-block;
+    margin: 32px 0 56px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+</style>

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  locale="en"
+  active=""
+  path="credits"
+  title="Credits | DFS Lab"
+  description="Sources and licenses for the photos and logos used on the DFS Lab website"
+>
+  <div class="wrap">
+    <h1>Credits</h1>
+    <p class="lede">Sources and licenses for the photos and logos used on this site.</p>
+
+    <section class="block">
+      <h2>Photos</h2>
+      <ul>
+        <li>Hard disk drive (Data Recovery card) : Wikimedia Commons, "Hard disk drive platter, Samsung MP0402H.jpg", CC BY 4.0</li>
+        <li>SSD : Wikimedia Commons, "Samsung 870 QVO 8TB ... SSD023_corr.png", CC BY 4.0</li>
+        <li>NVMe : Wikimedia Commons, "2023 Napęd Samsung 970 EVO Plus 250GB (1).jpg", CC BY-SA 4.0</li>
+        <li>Forensic disk imager (Evidence Verification card) : Wikimedia Commons, "Forensic disk imager.jpg", CC BY-SA 4.0</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>Logos</h2>
+      <p>Logos are from Simple Icons (CC0, SVG). Trademarks for each icon (KakaoTalk, Telegram, WhatsApp, Signal, Instagram, LINE, Discord, Chrome, Google Cloud, iCloud, Google Drive, Dropbox, Naver MYBOX) belong to their respective companies.</p>
+      <p>The AWS, Microsoft Azure, and OneDrive logos are files hosted on Wikimedia Commons.</p>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .lede { font-size: 16px; max-width: 700px; margin-bottom: 32px; color: var(--text-muted-2); }
+  .block { margin-bottom: 32px; max-width: 760px; }
+  .block h2 { font-size: 18px; }
+  ul { padding-left: 20px; }
+  li { margin-bottom: 8px; font-size: 14px; color: var(--text-muted-2); }
+</style>

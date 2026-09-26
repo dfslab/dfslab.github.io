@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PublicationList from '../components/PublicationList.astro';
+import { getPublications } from '../lib/data.js';
+
+const publications = getPublications();
+---
+<BaseLayout
+  locale="ko"
+  active="publications"
+  path="publications"
+  title="논문 | DFS Lab"
+  description={`DFS Lab 논문 목록 (총 ${publications.length}편)`}
+>
+  <div class="wrap">
+    <h1>논문</h1>
+    <p class="intro">총 {publications.length}편. 학술지 논문과 학술대회 발표를 원문 그대로 정리했습니다.</p>
+    <PublicationList locale="ko" publications={publications} />
+  </div>
+</BaseLayout>
+
+<style>
+  .intro { margin-bottom: 32px; }
+</style>

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  locale="ko"
+  active=""
+  path="credits"
+  title="크레딧 | DFS Lab"
+  description="DFS Lab 홈페이지에 사용한 사진·로고의 출처와 라이선스"
+>
+  <div class="wrap">
+    <h1>크레딧</h1>
+    <p class="lede">이 사이트에 사용한 사진과 로고의 출처와 라이선스입니다.</p>
+
+    <section class="block">
+      <h2>사진</h2>
+      <ul>
+        <li>하드디스크 (데이터 복구 카드) : Wikimedia Commons, "Hard disk drive platter, Samsung MP0402H.jpg", CC BY 4.0</li>
+        <li>SSD : Wikimedia Commons, "Samsung 870 QVO 8TB ... SSD023_corr.png", CC BY 4.0</li>
+        <li>NVMe : Wikimedia Commons, "2023 Napęd Samsung 970 EVO Plus 250GB (1).jpg", CC BY-SA 4.0</li>
+        <li>디스크 이미저 (증거 검증 카드) : Wikimedia Commons, "Forensic disk imager.jpg", CC BY-SA 4.0</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>로고</h2>
+      <p>Simple Icons(CC0, SVG)를 사용했습니다. 각 아이콘이 나타내는 상표(카카오톡, 텔레그램, WhatsApp, Signal, 인스타그램, LINE, 디스코드, 크롬, Google Cloud, iCloud, Google 드라이브, Dropbox, 네이버 MYBOX)의 권리는 각 회사에 있습니다.</p>
+      <p>AWS, Microsoft Azure, OneDrive 로고는 Wikimedia Commons에 게재된 파일을 사용했습니다.</p>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .lede { font-size: 16px; max-width: 700px; margin-bottom: 32px; color: var(--text-muted-2); }
+  .block { margin-bottom: 32px; max-width: 760px; }
+  .block h2 { font-size: 18px; }
+  ul { padding-left: 20px; }
+  li { margin-bottom: 8px; font-size: 14px; color: var(--text-muted-2); }
+</style>

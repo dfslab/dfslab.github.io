@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  locale="en"
+  active="join"
+  path="join"
+  title="Join Us | DFS Lab"
+  description="DFSL is recruiting graduate students, undergraduate researchers, and interns."
+>
+  <div class="wrap">
+    <h1>Call for Researchers</h1>
+    <p class="lede">(We are currently recruiting new researchers.) Join the Digital Forensics & Security Lab (DFSL) and shape the future of cybersecurity.</p>
+
+    <section class="block">
+      <h2>Welcome to DFSL</h2>
+      <p>The Digital Forensics & Security Laboratory (DFSL), led by Professor Jiho Shin at Mokwon University, conducts research in digital forensics with an expanding focus on cyber security.</p>
+      <p>The laboratory focuses on system-level analysis of digital data from databases, memory, file systems, and cloud platforms, with particular emphasis on data recovery and the structural interpretation of digital evidence.</p>
+      <p>Our goal is to develop reliable forensic analysis and digital evidence validation techniques that support cybercrime investigations while contributing to broader cyber security applications.</p>
+    </section>
+
+    <section class="block">
+      <h2>Who We Are Looking For</h2>
+      <ul>
+        <li>Graduate Students (M.S./Ph.D. tracks)</li>
+        <li>Undergraduate Students</li>
+        <li>Research Intern</li>
+      </ul>
+      <p>Our lab focuses on cutting-edge research in digital/cyber forensics, cloud forensics, and cybercrime investigation paradigms. We are looking for passionate students who are eager to become top-tier experts under the mentorship of a professor with extensive real-world experience and academic expertise.</p>
+    </section>
+
+    <section class="block">
+      <h2>How to Apply</h2>
+      <p>Please send your transcript and brief cover letter via email to:</p>
+      <p class="email"><a href="mailto:suchme@gmail.com">suchme@gmail.com</a></p>
+    </section>
+  </div>
+</BaseLayout>
+
+<style>
+  .lede { font-size: 17px; max-width: 720px; margin-bottom: 40px; }
+  .block { margin-bottom: 36px; max-width: 720px; }
+  .block h2 { font-size: 19px; }
+  .email { font-size: 16px; font-weight: 600; margin-top: 16px; }
+</style>

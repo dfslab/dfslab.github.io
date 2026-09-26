@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectList from '../../components/ProjectList.astro';
+import { getProjects } from '../../lib/data.js';
+
+const projects = getProjects();
+---
+<BaseLayout
+  locale="en"
+  active="projects"
+  path="projects"
+  title="Projects | DFS Lab"
+  description={`DFS Lab project list (${projects.length} total)`}
+>
+  <div class="wrap">
+    <h1>Projects</h1>
+    <p class="intro">{projects.length} projects in total.</p>
+    <ProjectList locale="en" projects={projects} />
+  </div>
+</BaseLayout>
+
+<style>
+  .intro { margin-bottom: 32px; }
+</style>

@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PublicationList from '../../components/PublicationList.astro';
+import { getPublications } from '../../lib/data.js';
+
+const publications = getPublications();
+---
+<BaseLayout
+  locale="en"
+  active="publications"
+  path="publications"
+  title="Publications | DFS Lab"
+  description={`DFS Lab publication list (${publications.length} total)`}
+>
+  <div class="wrap">
+    <h1>Publications</h1>
+    <p class="intro">{publications.length} publications in total, listed as originally published (journal articles and conference papers).</p>
+    <PublicationList locale="en" publications={publications} />
+  </div>
+</BaseLayout>
+
+<style>
+  .intro { margin-bottom: 32px; }
+</style>

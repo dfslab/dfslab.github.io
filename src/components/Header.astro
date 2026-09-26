@@ -1,0 +1,28 @@
+---
+import { NAV_ITEMS, localeHref, otherLocale } from '../lib/nav.js';
+
+interface Props {
+  locale: 'ko' | 'en';
+  active?: string;
+  /** 현재 페이지의 경로 세그먼트('research' 등). 홈이면 빈 문자열. 언어 전환 시 동일 페이지로 이동하기 위해 사용. */
+  path?: string;
+}
+const { locale, active, path = '' } = Astro.props as Props;
+const other = otherLocale(locale);
+---
+<header class="site-header">
+  <a href={localeHref(locale)} class="logo">Digital Forensics &amp; Security Lab</a>
+  <nav class="site-nav" aria-label={locale === 'ko' ? '주 메뉴' : 'Main menu'}>
+    {NAV_ITEMS.map((item) => (
+      <a
+        href={localeHref(locale, item.path)}
+        class={`${item.key === active ? 'active' : ''} ${item.key === 'join' ? 'recruit' : ''}`}
+      >
+        {locale === 'ko' ? item.ko : item.en}
+      </a>
+    ))}
+    <a href={localeHref(other, path)} class="lang" hreflang={other} lang={other}>
+      {other === 'en' ? 'EN' : 'KO'}
+    </a>
+  </nav>
+</header>

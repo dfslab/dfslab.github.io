@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ResearchCardGrid from '../../components/ResearchCardGrid.astro';
+import { getPublications } from '../../lib/data.js';
+
+const publications = getPublications();
+---
+<BaseLayout
+  locale="en"
+  active=""
+  path=""
+  title="DFS Lab | Digital Forensics & Security Lab"
+  description="Digital Forensics & Security Lab (DFSL) at Mokwon University. We locate data left on digital devices and services, and verify whether it holds up as evidence."
+>
+  <section class="hero wrap">
+    <h1>Where Do Digital Traces Live,<br />and What Do They Look Like?</h1>
+    <p class="lede">We locate the data left behind on digital devices and services, and verify whether it holds up as evidence.</p>
+  </section>
+  <div class="wrap">
+    <ResearchCardGrid locale="en" />
+    <a href="/en/research" class="more-link">All research topics and {publications.length} publications</a>
+  </div>
+</BaseLayout>
+
+<style>
+  .hero { padding-top: 48px; max-width: 900px; }
+  .lede { font-size: 18px; line-height: 1.7; color: var(--text-muted-2); margin: 0; }
+  .more-link {
+    display: inline-block;
+    margin: 32px 0 56px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+</style>
