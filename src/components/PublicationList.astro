@@ -6,6 +6,9 @@ interface Pub {
   title: string;
   venue: string;
   year: number;
+  volume?: string;
+  issue?: string;
+  pages?: string;
   award?: string;
   url?: string;
 }
@@ -16,45 +19,107 @@ interface Props {
 const { locale, publications } = Astro.props as Props;
 const isKo = locale === 'ko';
 
-const GROUP_LABEL: Record<string, string> = isKo
-  ? { journal: '학술지 논문', conference: '학술대회 발표', misc: '기타' }
-  : { journal: 'Journal Article', conference: 'Conference', misc: 'Misc' };
+const TYPE_LABEL: Record<string, string> = { journal: 'Article', conference: 'Conference', misc: 'Report' };
+const FILTER_LABEL: Record<string, string> = isKo
+  ? { all: '전체', journal: '학술지(Article)', conference: '학술대회(Conference)', misc: '기타(Report)' }
+  : { all: 'All', journal: 'Article', conference: 'Conference', misc: 'Report' };
 
-const order: Array<'journal' | 'conference' | 'misc'> = ['journal', 'conference', 'misc'];
-const groups = order.map((t) => ({ type: t, items: publications.filter((p) => p.type === t) }));
+const sorted = [...publications].sort((a, b) => b.year - a.year);
+
+const years = Array.from(new Set(sorted.map((p) => p.year)));
+
+function citation(p: Pub) {
+  // 학술지 논문: 권/호/쪽 포함 인용 형식. 학술대회·기타는 기존 형식 유지(변경하지 않음).
+  if (p.type === 'journal' && p.volume) {
+    const parts = [`vol. ${p.volume}`];
+    if (p.issue) parts.push(`no. ${p.issue}`);
+    if (p.pages) parts.push(p.pages);
+    return `${p.venue}, ${parts.join(', ')}, ${p.year}.`;
+  }
+  return `${p.venue}, ${p.year}.`;
+}
 ---
-<div class="pub-groups">
-  {groups.map((g) => (
-    <section class="pub-group">
-      <h2>{GROUP_LABEL[g.type]} <span class="count">({g.items.length})</span></h2>
-      <ol class="pub-list">
-        {g.items.map((p) => (
-          <li class="pub-item">
-            <span class="pub-authors">{p.authors}</span>,
-            {' '}
-            {p.url ? (
-              <a href={p.url} target="_blank" rel="noopener noreferrer">&ldquo;{p.title},&rdquo;</a>
-            ) : (
-              <span class="pub-title">&ldquo;{p.title},&rdquo;</span>
-            )}
-            {' '}
-            <em class="pub-venue">{p.venue}</em>, {p.year}.
-            {p.award && <span class="badge award">{p.award}</span>}
-          </li>
-        ))}
+<div class="pub-filters" id="pub-filters">
+  {(['all', 'journal', 'conference', 'misc'] as const).map((t) => (
+    <button type="button" class="pub-filter-btn" data-filter={t} aria-pressed={t === 'all' ? 'true' : 'false'}>
+      {FILTER_LABEL[t]}
+    </button>
+  ))}
+</div>
+
+<div class="pub-list" id="pub-list">
+  {years.map((year) => (
+    <section class="pub-year">
+      <h2 class="mono">{year}</h2>
+      <ol class="pub-items">
+        {sorted
+          .filter((p) => p.year === year)
+          .map((p) => (
+            <li class="pub-item" data-type={p.type}>
+              <span class="badge type">{TYPE_LABEL[p.type]}</span>
+              <span class="pub-authors">{p.authors}</span>,
+              {' '}
+              {p.url ? (
+                <a href={p.url} target="_blank" rel="noopener noreferrer">&ldquo;{p.title},&rdquo;</a>
+              ) : (
+                <span class="pub-title">&ldquo;{p.title},&rdquo;</span>
+              )}
+              {' '}
+              <em class="pub-venue">{citation(p)}</em>
+              {p.award && <span class="badge award">{p.award}</span>}
+            </li>
+          ))}
       </ol>
     </section>
   ))}
 </div>
 
+<script>
+  const wrap = document.getElementById('pub-filters');
+  const list = document.getElementById('pub-list');
+  if (wrap && list) {
+    wrap.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('.pub-filter-btn') as HTMLElement | null;
+      if (!btn) return;
+      const filter = btn.dataset.filter;
+      wrap.querySelectorAll('.pub-filter-btn').forEach((b) => b.setAttribute('aria-pressed', 'false'));
+      btn.setAttribute('aria-pressed', 'true');
+      list.querySelectorAll('.pub-item').forEach((item) => {
+        const el = item as HTMLElement;
+        const show = filter === 'all' || el.dataset.type === filter;
+        el.style.display = show ? '' : 'none';
+      });
+      list.querySelectorAll('.pub-year').forEach((sec) => {
+        const el = sec as HTMLElement;
+        const anyVisible = Array.from(el.querySelectorAll('.pub-item')).some(
+          (item) => (item as HTMLElement).style.display !== 'none'
+        );
+        el.style.display = anyVisible ? '' : 'none';
+      });
+    });
+  }
+</script>
+
 <style>
-  .pub-group { margin-bottom: 40px; }
-  .pub-group h2 { font-size: 18px; }
-  .count { color: var(--text-muted); font-weight: 400; font-size: 14px; }
-  .pub-list { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  .pub-filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+  .pub-filter-btn {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    padding: 6px 12px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    cursor: pointer;
+  }
+  .pub-filter-btn[aria-pressed="true"] { color: var(--link); border-color: var(--link); }
+
+  .pub-year { margin-bottom: 36px; }
+  .pub-year h2 { font-size: 16px; color: var(--link); margin: 0 0 12px; }
+  .pub-items { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
   .pub-item { font-size: 14px; line-height: 1.7; color: var(--text-muted-2); padding-bottom: 14px; border-bottom: 1px solid var(--border-soft); }
   .pub-authors { color: var(--text); font-weight: 500; }
   .pub-title { color: var(--text); }
   .pub-venue { font-style: normal; color: var(--text-muted); }
+  .badge.type { margin-right: 8px; }
   .badge.award { margin-left: 8px; color: var(--link); border-color: var(--link); }
 </style>

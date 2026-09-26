@@ -8,6 +8,9 @@
   venue: "Applied Sciences"
   year: 2026
   url: "https://www.mdpi.com/2076-3417/16/13/6416"
+  volume: "16"
+  issue: "13"
+  pages: "6416"
 - id: pub-002
   type: journal
   authors: "Jiho Shin, Inkyoung Shin"
@@ -15,6 +18,9 @@
   venue: "Electronics"
   year: 2026
   url: "https://www.mdpi.com/2079-9292/15/11/2370"
+  volume: "15"
+  issue: "11"
+  pages: "2370"
 - id: pub-003
   type: journal
   authors: "Jiho Shin, Byoung Hun Moon"
@@ -22,6 +28,8 @@
   venue: "IEEE Access"
   year: 2025
   url: "https://doi.org/10.1109/access.2025.3639429"
+  volume: "13"
+  pages: "204168-204178"
 - id: pub-004
   type: journal
   authors: "Jiho Shin"
@@ -29,6 +37,9 @@
   venue: "Sensors"
   year: 2025
   url: "https://doi.org/10.3390/s25113512"
+  volume: "25"
+  issue: "11"
+  pages: "3512"
 - id: pub-005
   type: journal
   authors: "신지호, 신인경"
@@ -36,6 +47,9 @@
   venue: "치안정책연구"
   year: 2024
   url: "https://doi.org/10.35147/knpsi.2024.38.4.417"
+  volume: "38"
+  issue: "4"
+  pages: "417-448"
 - id: pub-006
   type: journal
   authors: "Mingyu Lee, Jiho Shin, Jung Taek Seo"
@@ -43,6 +57,9 @@
   venue: "Computers, Materials & Continua"
   year: 2023
   url: "https://doi.org/10.32604/cmc.2023.041774"
+  volume: "77"
+  issue: "2"
+  pages: "2427-2442"
 - id: pub-007
   type: journal
   authors: "Ju Hyeon, Jiho Shin, Jung Taek Seo"
@@ -50,6 +67,9 @@
   venue: "Computers, Materials & Continua"
   year: 2023
   url: "https://doi.org/10.32604/cmc.2023.039461"
+  volume: "77"
+  issue: "1"
+  pages: "757-779"
 - id: pub-008
   type: journal
   authors: "Donghyun Kim, Seungho Jeon, Jiho Shin, Jung Taek Seo"
@@ -57,6 +77,9 @@
   venue: "Intelligent Automation & Soft Computing"
   year: 2023
   url: "https://doi.org/10.32604/iasc.2023.040019"
+  volume: "37"
+  issue: "3"
+  pages: "2979-2997"
 - id: pub-009
   type: journal
   authors: "Daun Jung, Jiho Shin, Chaechang Lee, Kookheui Kwon, Jung Taek Seo"
@@ -64,6 +87,8 @@
   venue: "IEEE Access"
   year: 2023
   url: "https://doi.org/10.1109/access.2023.3244991"
+  volume: "11"
+  pages: "15229-15241"
 - id: pub-010
   type: journal
   authors: "Donghyun Kim, Jiho Shin, Jung Taek Seo"
@@ -71,6 +96,9 @@
   venue: "Journal of Internet Computing and Services"
   year: 2023
   url: "https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART002937264"
+  volume: "24"
+  issue: "1"
+  pages: "17-26"
 - id: pub-011
   type: journal
   authors: "Jiho Shin, Jung Taek Seo"
@@ -78,6 +106,9 @@
   venue: "Sustainability"
   year: 2022
   url: "https://doi.org/10.3390/su142013281"
+  volume: "14"
+  issue: "20"
+  pages: "13281"
 - id: pub-012
   type: journal
   authors: "Joonwon Kim, Jiho Shin, Jung Taek Seo"
@@ -85,6 +116,9 @@
   venue: "Journal of Internet Technology"
   year: 2022
   url: "https://doi.org/10.53106/160792642022072304022"
+  volume: "23"
+  issue: "4"
+  pages: "875-888"
 - id: pub-013
   type: journal
   authors: "Hyunpyo Choi, Jiho Shin, Jung Taek Seo"
@@ -92,6 +126,8 @@
   venue: "Security and Communication Networks"
   year: 2022
   url: "https://doi.org/10.1155/2022/9418051"
+  volume: "2022"
+  pages: "1-10"
 - id: pub-014
   type: journal
   authors: "Abdul Wahid Khan, Shah Zaib, Faheem Khan, Ilhan Tarimer, Jung Taek Seo, Jiho Shin"
@@ -99,6 +135,8 @@
   venue: "IEEE Access"
   year: 2022
   url: "https://doi.org/10.1109/access.2022.3179822"
+  volume: "10"
+  pages: "65044-65054"
 - id: pub-015
   type: journal
   authors: "J oonwon Kim, Jiho Shin, K i Woong Park, Jung Taek Seo"
@@ -106,6 +144,9 @@
   venue: "Computers, Materials & Continua"
   year: 2022
   url: "https://doi.org/10.32604/cmc.2022.026619"
+  volume: "72"
+  issue: "3"
+  pages: "5377-5394"
 - id: pub-016
   type: journal
   authors: "Jiho Shin, Hyunpyo Choi, Jung Taek Seo"
@@ -113,6 +154,8 @@
   venue: "Forensic Science International: Digital Investigation"
   year: 2022
   url: "https://doi.org/10.1016/j.fsidi.2022.301354"
+  volume: "40"
+  pages: "301354"
 - id: pub-017
   type: journal
   authors: "신지호, 최현표, 박광선"
@@ -120,6 +163,9 @@
   venue: "디지털포렌식연구"
   year: 2022
   url: "https://doi.org/10.22798/KDFS.2022.16.3.102"
+  volume: "16"
+  issue: "3"
+  pages: "102"
 - id: pub-018
   type: journal
   authors: "박광선, 최동희, 신지호"
@@ -127,6 +173,9 @@
   venue: "치안정책연구"
   year: 2022
   url: "https://doi.org/10.35147/knpsi.2022.36.3.349"
+  volume: "36"
+  issue: "3"
+  pages: "349-380"
 - id: pub-019
   type: journal
   authors: "Jiho Shin, Ilsun You, Jung Taek Seo"
@@ -134,6 +183,8 @@
   venue: "Mobile Information Systems"
   year: 2020
   url: "https://doi.org/10.1155/2020/8878088"
+  volume: "2020"
+  pages: "1-11"
 - id: pub-020
   type: journal
   authors: "Joo Chan Lee, Hyun Pyo Choi, Jang Hoon Kim, Jun Won Kim, Daun Jung, Jiho Shin, Jung Taek Seo"
@@ -141,6 +192,9 @@
   venue: "Computers, Materials & Continua"
   year: 2020
   url: "https://doi.org/10.32604/cmc.2020.011251"
+  volume: "65"
+  issue: "1"
+  pages: "53-67"
 - id: pub-021
   type: journal
   authors: "박요한, 신지호"
@@ -148,6 +202,9 @@
   venue: "치안정책연구"
   year: 2020
   url: "https://doi.org/10.35147/knpsi.2020.34.4.313"
+  volume: "34"
+  issue: "4"
+  pages: "313-339"
 - id: pub-022
   type: journal
   authors: "김장훈, 이주찬, 신지호, 서정택"
@@ -155,6 +212,9 @@
   venue: "전기학회논문지"
   year: 2020
   url: "https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART002604982"
+  volume: "69"
+  issue: "7"
+  pages: "1136-1143"
 - id: pub-023
   type: journal
   authors: "신지호, 서정택"
@@ -162,6 +222,9 @@
   venue: "정보보호학회논문지"
   year: 2019
   url: "https://doi.org/10.13089/JKIISC.2019.29.6.1351"
+  volume: "29"
+  issue: "6"
+  pages: "1351-1364"
 - id: pub-024
   type: journal
   authors: "Jang Mook Kang, Jiho Shin, Choel Hee Yoon"
@@ -169,6 +232,9 @@
   venue: "International Journal of Engineering and Technology"
   year: 2018
   url: "https://doi.org/10.14419/ijet.v7i3.33.18598"
+  volume: "7"
+  issue: "3.33"
+  pages: "157"
 - id: pub-025
   type: journal
   authors: "신지호"
@@ -176,6 +242,9 @@
   venue: "정보보호학회논문지"
   year: 2018
   url: "https://doi.org/10.13089/JKIISC.2018.28.4.859"
+  volume: "28"
+  issue: "4"
+  pages: "859-868"
 - id: pub-026
   type: journal
   authors: "신지호"
@@ -183,6 +252,9 @@
   venue: "정보보호학회논문지"
   year: 2017
   url: "https://doi.org/10.13089/JKIISC.2017.27.2.223"
+  volume: "27"
+  issue: "2"
+  pages: "223-232"
 - id: pub-027
   type: journal
   authors: "신지호, 최낙범"
@@ -190,6 +262,9 @@
   venue: "경찰학연구"
   year: 2016
   url: "https://doi.org/10.22816/polsci.2016.16.3.009"
+  volume: "16"
+  issue: "3"
+  pages: "231-262"
 - id: pub-028
   type: journal
   authors: "신지호"
@@ -197,6 +272,9 @@
   venue: "디지털포렌식연구"
   year: 2015
   url: "https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART002160177"
+  volume: "9"
+  issue: "1"
+  pages: "33-46"
 - id: pub-029
   type: conference
   authors: "박현빈, 신지호"

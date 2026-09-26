@@ -15,7 +15,7 @@ const cards = getHomeCards(locale);
         <img src={card.image} alt={card.alt} class="rcard-media" loading="lazy" />
       )}
       {card.kind === 'icons' && (
-        <div class="rcard-icons">
+        <div class="rcard-icons" style={`grid-template-columns: repeat(${card.iconCols || 4}, minmax(0, 1fr));`}>
           {card.icons.map((icon) => (
             <div class="rcard-icon-tile">
               <img src={icon.file} alt={locale === 'ko' ? icon.ko : icon.en} loading="lazy" />

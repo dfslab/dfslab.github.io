@@ -5,13 +5,9 @@ export const DRAFT_EN = true;
 
 const APP_ICONS = [
   { file: '/images/logos/kakaotalk.svg', ko: '카카오톡', en: 'KakaoTalk' },
-  { file: '/images/logos/telegram.svg', ko: '텔레그램', en: 'Telegram' },
-  { file: '/images/logos/whatsapp.svg', ko: 'WhatsApp', en: 'WhatsApp' },
-  { file: '/images/logos/signal.svg', ko: 'Signal', en: 'Signal' },
-  { file: '/images/logos/instagram.svg', ko: '인스타그램', en: 'Instagram' },
-  { file: '/images/logos/line.svg', ko: 'LINE', en: 'LINE' },
-  { file: '/images/logos/discord.svg', ko: '디스코드', en: 'Discord' },
   { file: '/images/logos/googlechrome.svg', ko: '크롬', en: 'Chrome' },
+  { file: '/images/logos/android.svg', ko: '안드로이드', en: 'Android' },
+  { file: '/images/logos/windows.png', ko: 'Windows', en: 'Windows' },
 ];
 
 const CLOUD_ICONS = [
@@ -42,9 +38,10 @@ export function getHomeCards(locale) {
       key: 'apps',
       kind: 'icons',
       icons: APP_ICONS,
-      label: isKo ? '애플리케이션' : 'Applications',
-      heading: isKo ? '새로운 앱과 서비스는 어떤 흔적을 남기는가' : 'What traces do new apps and services leave behind?',
-      sub: isKo ? '메신저, 브라우저, 원격 접속, AI 앱' : 'Messengers, browsers, remote access, AI apps',
+      iconCols: 2,
+      label: isKo ? '애플리케이션·시스템' : 'Applications & Systems',
+      heading: isKo ? '새로운 앱과 시스템은 어떤 흔적을 남기는가' : 'What traces do new apps and systems leave behind?',
+      sub: isKo ? '메신저, 브라우저, 운영체제, 원격 접속' : 'Messengers, browsers, operating systems, remote access',
       dark: false,
     },
     {

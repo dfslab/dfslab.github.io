@@ -1,5 +1,6 @@
 ---
 import { NAV_ITEMS, localeHref, otherLocale } from '../lib/nav.js';
+import { siteConfig } from '../lib/site-config.js';
 
 interface Props {
   locale: 'ko' | 'en';
@@ -29,6 +30,9 @@ const other = otherLocale(locale);
           class={`${item.key === active ? 'active' : ''} ${item.key === 'join' ? 'recruit' : ''}`}
         >
           {locale === 'ko' ? item.ko : item.en}
+          {item.key === 'join' && siteConfig.recruiting && (
+            <span class="recruit-badge">{locale === 'ko' ? '모집중' : 'Hiring'}</span>
+          )}
         </a>
       ))}
       <a href={localeHref(other, path)} class="lang" hreflang={other} lang={other}>

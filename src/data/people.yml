@@ -15,19 +15,23 @@ professor:
     - "조교수, 목원대학교 컴퓨터융합학부"
   affiliation_en:
     - "Assistant Professor, Division of Computer Science Convergence, Mokwon University"
+  # 2026-09-27 소장 댓글 반영: 안전연구사·경찰연구관 직명, 정보보호학과 명칭 수정.
+  # experience_en 1번 줄의 "Research Fellow"는 "안전연구사"의 정식 영문 직명을 확인하지 못해
+  # 기존 표현을 그대로 두고 draft로 남김(소속 부서명만 반영).
   experience_ko:
-    - "연구위원, 치안정책연구소 사이버범죄연구센터"
-    - "연구경찰관, 경찰대학교 국제사이버범죄연구센터"
+    - "안전연구사, 치안정책연구소 과학수사연구부 사이버범죄연구센터"
+    - "경찰연구관, 경찰대학교 국제사이버범죄연구센터"
     - "사이버범죄수사관 및 포렌식분석관, 경기남부지방경찰청"
   experience_en:
-    - "Research Fellow, Cyber Crime Research Center, Police Science Institute"
+    - "Research Fellow, Cyber Crime Research Center, Division of Scientific Investigation, Police Science Institute"
     - "Research Police Officer, International Cybercrime Research Center, Korean National Police Univ."
     - "Cybercrime Investigator & Forensics Analyst, Gyeonggi Nambu Provincial Police Agency"
+  experience_en_draft: true
   education_ko:
-    - "박사, 순천향대학교 일반대학원 정보보호공학과"
+    - "박사, 순천향대학교 일반대학원 정보보호학과"
     - "석사, 고려대학교 정보보호대학원 디지털포렌식학과"
   education_en:
-    - "Ph.D., Department of Information Security & Engineering, Graduate School, Soonchunhyang University"
+    - "Ph.D., Department of Information Security, Graduate School, Soonchunhyang University"
     - "M.S., Department of Digital Forensics, School of Cybersecurity, Korea University"
 researchers:
   - name_ko: "신예준"

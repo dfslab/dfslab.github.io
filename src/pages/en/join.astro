@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { siteConfig } from '../../lib/site-config.js';
+// 2026-09-27: "연구원 특전" 섹션과 모집 배너는 팀장이 새로 옮긴 초안(draft)입니다. 나머지는 원문(영문 사이트) 그대로.
 ---
 <BaseLayout
   locale="en"
@@ -10,7 +12,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 >
   <div class="wrap">
     <h1>Call for Researchers</h1>
-    <p class="lede">(We are currently recruiting new researchers.) Join the Digital Forensics & Security Lab (DFSL) and shape the future of cybersecurity.</p>
+    {siteConfig.recruiting && (
+      <p class="recruit-banner">We are currently recruiting new researchers.</p>
+    )}
+    <p class="lede">Join the Digital Forensics &amp; Security Lab (DFSL) and shape the future of cybersecurity.</p>
 
     <section class="block">
       <h2>Welcome to DFSL</h2>
@@ -20,18 +25,30 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </section>
 
     <section class="block">
+      <h2>What You Get</h2>
+      <ul>
+        <li><strong>Research project experience</strong>: Take part in the lab's national and public-agency research projects and work on real investigative problems.</li>
+        <li><strong>Conference presentations</strong>: Present your research at major conferences such as the Korean Institute of Forensic Science and the Korea Institute of Information Security and Cryptology.</li>
+        <li><strong>Regular lab seminars</strong>: Present and discuss the latest research trends and your own work on a regular basis.</li>
+        <li><strong>Paper writing mentorship</strong>: Step-by-step guidance from choosing a topic through writing and submitting a paper.</li>
+        <li><strong>Dedicated research space</strong>: Room D425 in the Engineering Building is provided as your research space.</li>
+        <li><strong>Hands-on equipment</strong>: Work directly with the lab's digital forensics equipment, including a Forensic Falcon.</li>
+      </ul>
+    </section>
+
+    <section class="block">
       <h2>Who We Are Looking For</h2>
       <ul>
         <li>Graduate Students (M.S./Ph.D. tracks)</li>
         <li>Undergraduate Students</li>
         <li>Research Intern</li>
       </ul>
-      <p>Our lab focuses on cutting-edge research in digital/cyber forensics, cloud forensics, and cybercrime investigation paradigms. We are looking for passionate students who are eager to become top-tier experts under the mentorship of a professor with extensive real-world experience and academic expertise.</p>
+      <p>Our lab focuses on cutting-edge research in digital/cyber forensics, cloud forensics, and cybercrime investigation paradigms. We are looking for passionate student researchers who are eager to become top-tier experts under the mentorship of a professor with extensive real-world experience and academic expertise.</p>
     </section>
 
     <section class="block">
       <h2>How to Apply</h2>
-      <p>Please send your transcript and brief cover letter via email to:</p>
+      <p>Please send your transcript and a brief cover letter to your advisor's email below:</p>
       <p class="email"><a href="mailto:suchme@gmail.com">suchme@gmail.com</a></p>
     </section>
   </div>
@@ -39,7 +56,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <style>
   .lede { font-size: 17px; max-width: 720px; margin-bottom: 40px; }
+  .recruit-banner {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--link);
+    background: var(--surface);
+    border: 1px solid var(--link);
+    padding: 6px 14px;
+    margin: 0 0 16px;
+  }
   .block { margin-bottom: 36px; max-width: 720px; }
   .block h2 { font-size: 19px; }
+  .block ul { padding-left: 20px; color: var(--text-muted-2); }
+  .block li { margin-bottom: 8px; }
   .email { font-size: 16px; font-weight: 600; margin-top: 16px; }
 </style>

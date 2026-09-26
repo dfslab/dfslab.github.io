@@ -1,6 +1,6 @@
-// 연구 페이지: 홈 카드 4개를 확장한 상세 설명.
-// 소개 문장은 실제 논문 목록(publications.yml)에 실린 주제를 근거로 팀장(개발팀장)이 작성.
-// 영문(en) 문장은 팀장 초안이며 소장 검토 대상(draft).
+// 연구분야 페이지: 홈 카드 4개를 확장한 상세 설명.
+// 국문 문구는 소장 검토를 거쳐 실장이 확정한 문장(2026-09-27 반영, 그대로 사용).
+// 영문(en) 문장은 이 국문에 맞춰 팀장이 다시 옮긴 초안이며 소장 검토 대상(draft).
 export const DRAFT_EN = true;
 
 export function getResearchDetail(locale) {
@@ -14,28 +14,28 @@ export function getResearchDetail(locale) {
         : 'How much of deleted data can be recovered?',
       body: isKo
         ? [
-            '데이터베이스, 파일시스템, 메모리에서 삭제되거나 손상된 데이터가 실제로 어디까지 복구 가능한지를 시스템 내부 구조 수준에서 검증합니다.',
-            'Microsoft SQL Server의 삭제 이벤트·원본 수집 방식·데이터베이스 축소(Shrink) 상황에서의 레코드 복구 가능성을 버전별로 비교하고, 버퍼 풀과 페이지 구조를 직접 들여다보는 메모리 기반 포렌식 기법을 연구합니다.',
+            '운영체제와 파일시스템, 저장매체, 메모리, 데이터베이스에서 삭제되거나 손상된 데이터가 어떤 흔적을 남기는지 찾고, 그 흔적으로 원래 데이터를 복원하는 기술을 연구합니다.',
+            '파일시스템 메타데이터와 미할당 영역 분석, 저장매체(HDD, SSD, NVMe)의 특성에 따른 복구 가능성, 로그와 저널을 이용한 이력 재구성, 데이터베이스 레코드 복구까지 시스템 전반의 삭제 흔적을 다룹니다.',
           ]
         : [
-            'We verify, at the level of internal system structures, how much deleted or damaged data in databases, file systems, and memory can actually be recovered.',
-            'We compare record recoverability across Microsoft SQL Server versions under deletion events, raw acquisition methods, and database shrink operations, and study memory-based forensic techniques that directly inspect buffer pools and page structures.',
+            'We study how deleted or damaged data leaves traces in operating systems, file systems, storage media, memory, and databases, and how those traces can be used to restore the original data.',
+            'This covers the full range of deletion traces across a system: file system metadata and unallocated-space analysis, recoverability differences across storage media (HDD, SSD, NVMe), reconstructing history from logs and journals, and recovering database records.',
           ],
     },
     {
       key: 'apps',
-      label: isKo ? '애플리케이션' : 'Applications',
+      label: isKo ? '애플리케이션·시스템' : 'Applications & Systems',
       heading: isKo
-        ? '새로운 앱과 서비스는 어떤 흔적을 남기는가'
-        : 'What traces do new apps and services leave behind?',
+        ? '새로운 앱과 시스템은 어떤 흔적을 남기는가'
+        : 'What traces do new apps and systems leave behind?',
       body: isKo
         ? [
-            '메신저, 브라우저, 원격 접속 도구, 생성형 AI 애플리케이션이 기기에 남기는 아티팩트를 분석합니다.',
-            'iOS 기반 인스턴트 메신저의 개인정보 보호 신뢰성, 탈중앙화 웹 서비스 ZeroNet의 아티팩트, WebRTC 기반 크롬 원격 데스크톱(CRD) 환경의 피제어 PC 흔적, 생성형 AI 데스크톱 애플리케이션의 로컬 데이터 저장 구조와 대화 내역 복원 기법을 다룹니다.',
+            '애플리케이션과 운영체제, 네트워크 서비스가 사용자 기기와 서버, 로그 등 시스템 곳곳에 남기는 아티팩트를 분석합니다.',
+            '모바일과 PC 운영체제의 사용 흔적, 메신저와 브라우저 기록, 원격 접속과 협업 도구, 생성형 AI 서비스처럼 새로 등장하는 소프트웨어가 어디에 어떤 형식으로 데이터를 남기는지 밝히고, 이를 수사에 활용하는 분석 방법을 만듭니다.',
           ]
         : [
-            'We analyze the artifacts that messengers, browsers, remote access tools, and generative AI applications leave on devices.',
-            'Our work covers privacy protection reliability on iOS-based instant messengers, artifacts of the decentralized web service ZeroNet, traces left on controlled PCs in WebRTC-based Chrome Remote Desktop (CRD) sessions, and the local data storage structure and conversation-history recovery techniques of generative AI desktop applications.',
+            'We analyze the artifacts that applications, operating systems, and network services leave across a system, including user devices, servers, and logs.',
+            'We identify where and in what form usage traces on mobile and PC operating systems, messenger and browser records, remote access and collaboration tools, and newly emerging software such as generative AI services store data, and develop analysis methods that put these findings to use in investigations.',
           ],
     },
     {
@@ -46,12 +46,12 @@ export function getResearchDetail(locale) {
         : 'How do we acquire data that lives off the device?',
       body: isKo
         ? [
-            '클라우드 서비스와 동기화 데이터는 기기 하나만 조사해서는 전체 그림을 볼 수 없습니다. 클라우드 플랫폼 구조를 이해하고 수사 현장에서 실제로 확보 가능한 절차를 연구합니다.',
-            'Azure SQL Database 등 클라우드 데이터베이스의 구조적 한계와 수사 실무 교훈, PaaS 기반 DB 환경에서의 디지털포렌식 수사의 한계와 대응 방안을 다룹니다.',
+            '클라우드 서비스와 동기화 데이터는 기기 하나만 조사해서는 전체 그림을 볼 수 없습니다. 클라우드 플랫폼의 구조를 이해하고, 수사 현장에서 실제로 디지털 증거를 확보할 수 있는 절차를 연구합니다.',
+            'IaaS, PaaS, SaaS 형태의 클라우드 서비스와 클라우드 스토리지, 협업 플랫폼, 클라우드 데이터베이스에서 로그와 메타데이터, 사용자 데이터를 수집하고 분석하는 방법, 그리고 관할과 접근 권한 같은 수사 실무의 한계와 대응 방안을 다룹니다.',
           ]
         : [
-            'Cloud services and synced data cannot be fully understood by examining a single device alone. We study cloud platform structures and the acquisition procedures that are actually feasible in the field.',
-            'Our work covers the structural limitations and investigative lessons of cloud databases such as Azure SQL Database, and the limitations of and responses to digital forensic investigation in PaaS-based DB environments.',
+            'Cloud services and synced data cannot be fully understood by examining a single device alone. We study cloud platform structures and the procedures that make it possible to actually acquire digital evidence in the field.',
+            'This covers methods for collecting and analyzing logs, metadata, and user data from IaaS, PaaS, and SaaS cloud services, cloud storage, collaboration platforms, and cloud databases, as well as the practical limitations of investigations, such as jurisdiction and access rights, and how to address them.',
           ],
     },
     {
@@ -63,11 +63,11 @@ export function getResearchDetail(locale) {
       body: isKo
         ? [
             '분석 도구와 절차 자체의 신뢰성을 검증하고, 분석을 방해하거나 흔적을 지우려는 안티포렌식 시도를 탐지하는 방법을 연구합니다.',
-            '산업제어시스템(ICS) 엔지니어링 워크스테이션의 프로젝트 파일 조작 탐지, Tor 기반 은닉 서비스의 취약점 분류와 비식별화 프레임워크, 안티포렌식 관점에서의 원격 데스크톱 환경 역추적 연구가 여기에 속합니다.',
+            '분석 도구 결과의 정확성 검증, 해시와 이미징 절차를 통한 디지털 증거의 무결성 보장, 수집부터 분석까지의 절차 표준화, 그리고 데이터 은닉·삭제·위변조 같은 안티포렌식 기법의 탐지를 다룹니다.',
           ]
         : [
             'We verify the reliability of analysis tools and procedures themselves, and study how to detect anti-forensic attempts that interfere with analysis or erase traces.',
-            'This includes detecting project file manipulation on industrial control system (ICS) engineering workstations, a vulnerability taxonomy for Tor-based hidden services, and tracing traces back through remote desktop environments from an anti-forensics perspective.',
+            'This covers verifying the accuracy of analysis tool results, ensuring the integrity of digital evidence through hashing and imaging procedures, standardizing procedures from collection through analysis, and detecting anti-forensic techniques such as data hiding, deletion, and tampering.',
           ],
     },
   ];

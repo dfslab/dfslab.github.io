@@ -8,12 +8,12 @@ const sections = getResearchDetail('ko');
   locale="ko"
   active="research"
   path="research"
-  title="연구 | DFS Lab"
-  description="DFS Lab의 네 가지 연구 분야: 데이터 복구, 애플리케이션, 클라우드, 증거 검증."
+  title="연구분야 | DFS Lab"
+  description="DFS Lab의 네 가지 연구분야: 데이터 복구, 애플리케이션·시스템, 클라우드, 증거 검증."
 >
   <div class="wrap">
-    <h1>연구</h1>
-    <p class="intro">디지털 기기와 서비스에 남은 데이터를 찾아내고, 증거로 쓸 수 있는지 검증합니다. 아래 네 가지 질문을 중심으로 연구를 진행합니다.</p>
+    <h1>연구분야</h1>
+    <p class="intro">디지털 기기와 서비스에 남은 데이터를 찾아내고, 디지털 증거로 쓸 수 있는지 검증합니다. 아래 네 가지 질문을 중심으로 연구를 진행합니다.</p>
     {sections.map((s) => (
       <section id={s.key} class="area">
         <span class="mono area-label">{s.label}</span>
@@ -22,6 +22,7 @@ const sections = getResearchDetail('ko');
       </section>
     ))}
     <p class="more"><a href="/publications">전체 논문 목록 보기</a> · <a href="/projects">전체 프로젝트 보기</a></p>
+    <p class="photo-credit"><a href="/credits">사진 출처</a></p>
   </div>
 </BaseLayout>
 
@@ -33,4 +34,6 @@ const sections = getResearchDetail('ko');
   .area h2 { margin-top: 8px; max-width: 760px; }
   .area p { max-width: 760px; }
   .more { margin-top: 24px; font-weight: 600; }
+  .photo-credit { margin-top: 32px; font-size: 12px; }
+  .photo-credit a { color: var(--text-muted); }
 </style>
