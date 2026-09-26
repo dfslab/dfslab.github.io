@@ -29,6 +29,14 @@ function formatDate(d: Date) {
           <li class="news-item">
             <time datetime={item.data.date.toISOString()} class="mono">{formatDate(item.data.date)}</time>
             <h2>{item.data.title_ko}</h2>
+            {item.data.images && item.data.images.length > 0 && (
+              <img
+                src={item.data.images[0].src}
+                alt={item.data.images[0].alt_ko}
+                class="news-thumb"
+                loading="lazy"
+              />
+            )}
             <div class="news-body"><Content /></div>
             {item.data.link && (
               <a href={item.data.link} target="_blank" rel="noopener noreferrer" class="news-link">
@@ -48,6 +56,13 @@ function formatDate(d: Date) {
   .news-item { padding-bottom: 28px; border-bottom: 1px solid var(--border); }
   .news-item time { display: block; font-size: 13px; color: var(--link); margin-bottom: 6px; }
   .news-item h2 { font-size: 18px; margin: 0 0 10px; }
+  .news-thumb {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+  }
   .news-body :global(p) { margin: 0 0 10px; font-size: 15px; }
   .news-link { font-weight: 600; font-size: 14px; }
 </style>

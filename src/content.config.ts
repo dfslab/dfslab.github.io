@@ -11,6 +11,15 @@ const news = defineCollection({
     link: z.string().optional(),
     link_label_ko: z.string().optional(),
     draft: z.boolean().optional(),
+    images: z
+      .array(
+        z.object({
+          src: z.string(),
+          alt_ko: z.string(),
+          alt_en: z.string(),
+        })
+      )
+      .optional(),
   }),
 });
 

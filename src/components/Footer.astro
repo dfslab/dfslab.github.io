@@ -9,6 +9,7 @@ const isKo = locale === 'ko';
 ---
 <footer class="site-footer">
   <div class="wrap footer-inner">
+    <img src="/images/brand/dfsl-logo.png" alt="DFSL 로고" class="footer-logo" loading="lazy" />
     <div>Digital Forensics &amp; Security Laboratory</div>
     <div>{isKo ? '목원대학교 컴퓨터융합학부' : 'Division of Computer Science Convergence, Mokwon University'}</div>
     <div>{isKo ? '#D425, 공학관(D동), 대전광역시 서구 도안북로 88' : '#D425, Engineering Building (D), 88 Doanbuk-ro, Seo-gu, Daejeon'}</div>
@@ -16,3 +17,11 @@ const isKo = locale === 'ko';
     <div><a href={localeHref(locale, 'credits')}>{isKo ? '사진 출처' : 'Photo Credits'}</a></div>
   </div>
 </footer>
+
+<style>
+  .footer-logo {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+  }
+</style>

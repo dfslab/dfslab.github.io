@@ -7,6 +7,9 @@ draft_ko_translation: true
 professor:
   name_ko: "신지호"
   name_en: "Jiho Shin, Ph.D."
+  photo: "/images/people/jiho-shin.jpg"
+  photo_alt_ko: "신지호 교수 사진"
+  photo_alt_en: "Photo of Professor Jiho Shin"
   email: "suchme@gmail.com"
   affiliation_ko:
     - "조교수, 목원대학교 컴퓨터융합학부"
@@ -29,6 +32,9 @@ professor:
 researchers:
   - name_ko: "신예준"
     name_en: "Yejun Shin"
+    photo: "/images/people/yejun-shin.jpg"
+    photo_alt_ko: "신예준 연구원 사진"
+    photo_alt_en: "Photo of researcher Yejun Shin"
     status_ko: "학부연구생"
     status_en: "Undergraduate Course"
     interests_ko: ["디지털포렌식", "웹 해킹"]
@@ -36,6 +42,9 @@ researchers:
     email: "xk17sin9@gmail.com"
   - name_ko: "문준수"
     name_en: "Moon Junsu"
+    photo: "/images/people/moon-junsu.jpg"
+    photo_alt_ko: "문준수 연구원 사진"
+    photo_alt_en: "Photo of researcher Moon Junsu"
     status_ko: "학부연구생"
     status_en: "Undergraduate Course"
     interests_ko: ["디지털포렌식", "제어시스템(ICS) 보안"]
