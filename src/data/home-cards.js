@@ -13,12 +13,8 @@ const APP_ICONS = [
 const CLOUD_ICONS = [
   { file: '/images/logos/aws.png', ko: 'AWS', en: 'AWS' },
   { file: '/images/logos/azure.png', ko: 'Microsoft Azure', en: 'Microsoft Azure' },
-  { file: '/images/logos/googlecloud.svg', ko: 'Google Cloud', en: 'Google Cloud' },
-  { file: '/images/logos/icloud.svg', ko: 'iCloud', en: 'iCloud' },
   { file: '/images/logos/googledrive.svg', ko: 'Google 드라이브', en: 'Google Drive' },
-  { file: '/images/logos/onedrive.png', ko: 'OneDrive', en: 'OneDrive' },
-  { file: '/images/logos/dropbox.svg', ko: 'Dropbox', en: 'Dropbox' },
-  { file: '/images/logos/naver.svg', ko: '네이버 MYBOX', en: 'Naver MYBOX' },
+  { file: '/images/logos/icloud.svg', ko: 'iCloud', en: 'iCloud' },
 ];
 
 export function getHomeCards(locale) {
@@ -48,6 +44,7 @@ export function getHomeCards(locale) {
       key: 'cloud',
       kind: 'icons',
       icons: CLOUD_ICONS,
+      iconCols: 2,
       label: isKo ? '클라우드' : 'Cloud',
       heading: isKo ? '기기 밖에 있는 데이터는 어떻게 확보하는가' : 'How do we acquire data that lives off the device?',
       sub: isKo ? '클라우드 서비스, 동기화 데이터' : 'Cloud services, synced data',

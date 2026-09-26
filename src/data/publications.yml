@@ -62,7 +62,7 @@
   pages: "2427-2442"
 - id: pub-007
   type: journal
-  authors: "Ju Hyeon, Jiho Shin, Jung Taek Seo"
+  authors: "Ju Hyeon Lee, Jiho Shin, Jung Taek Seo"
   title: "Solar Power Plant Network Packet-Based Anomaly Detection System for Cybersecurity"
   venue: "Computers, Materials & Continua"
   year: 2023
@@ -111,7 +111,7 @@
   pages: "13281"
 - id: pub-012
   type: journal
-  authors: "Joonwon Kim, Jiho Shin, Jung Taek Seo"
+  authors: "Junwon Kim, Jiho Shin, Jung Taek Seo"
   title: "Detection and Blocking Method against DLL Injection Attack Using PEB-LDR of ICS EWS in Smart IoT Environments"
   venue: "Journal of Internet Technology"
   year: 2022
@@ -139,7 +139,7 @@
   pages: "65044-65054"
 - id: pub-015
   type: journal
-  authors: "J oonwon Kim, Jiho Shin, K i Woong Park, Jung Taek Seo"
+  authors: "Junwon Kim, Jiho Shin, Ki-Woong Park, Jung Taek Seo"
   title: "Improving Method of Anomaly Detection Performance for Industrial IoT Environment"
   venue: "Computers, Materials & Continua"
   year: 2022
@@ -227,9 +227,9 @@
   pages: "1351-1364"
 - id: pub-024
   type: journal
-  authors: "Jang Mook Kang, Jiho Shin, Choel Hee Yoon"
-  title: "A Study on Development of IoT Software Vulnerability Response System Based on Artificial Intelligence"
-  venue: "International Journal of Engineering and Technology"
+  authors: "Jang Mook Kang, Choel Hee Yoon, Jiho Shin"
+  title: "A Study on Development of IoT Software Vulnerability (Using Fake Information) Response System Based on Artificial Intelligence"
+  venue: "International Journal of Engineering & Technology"
   year: 2018
   url: "https://doi.org/10.14419/ijet.v7i3.33.18598"
   volume: "7"
@@ -292,16 +292,16 @@
 - id: pub-031
   type: conference
   authors: "박현빈, 신지호"
-  title: "안티포렌식 관점에서의 WebRTC 기반 크롬 원격 데스크탑(CRD) 환경 분석: 제어 PC를 통한 피제어 PC 흔적 역추적 연구"
+  title: "안티포렌식 관점에서의 WebRTC 기반 크롬 원격 데스크톱(CRD) 환경 분석: 제어 PC를 통한 피제어 PC 흔적 역추적 연구"
   venue: "한국디지털포렌식학회 하계학술대회"
   year: 2026
   award: "한국디지털포렌식학회장상"
 - id: pub-032
   type: conference
   authors: "Donghyun Kim, Seungho Jeon, Jiho Shin, Jung Taek Seo"
-  title: "OCR meets the Dark Web: Identifying the Content Type of Regarding Illegal and Cybercrime"
+  title: "OCR meets the Dark Web: Identifying the Content Type Regarding Illegal and Cybercrime"
   venue: "World Conference on Information Security Applications (WISA)"
-  year: 2023
+  year: 2024
   url: "https://doi.org/10.1007/978-981-99-8024-6_16"
 - id: pub-033
   type: conference
@@ -317,7 +317,7 @@
   year: 2022
 - id: pub-035
   type: conference
-  authors: "Changhyung Roh, Ilh wa n Ji, Jiho Shin, Jung Taek Seo"
+  authors: "Changhyung Roh, Ilhwan Ji, Jiho Shin, Jung Taek Seo"
   title: "A Study on PLC Data Integrity Verification Using Private Blockchain"
   venue: "International Conference on Mobile Internet Security (Mobisec)"
   year: 2022
@@ -405,21 +405,21 @@
   url: "https://doi.org/10.1145/3440943.3444736"
 - id: pub-049
   type: conference
-  authors: "Daun Jung, Jiho Shin, Chaechang Lee, Kookheui Kown and Jung Taek Seo"
+  authors: "Daun Jung, Jiho Shin, Chaechang Lee, Kookheui Kwon, Jung Taek Seo"
   title: "A Study on the Application of Technical Assessment Methodology(TAM) for Cyber Security in Nuclear Power Plant"
   venue: "International Conference on Intelligent Computing and its Emerging Applications (ICEA)"
   year: 2020
   url: "https://doi.org/10.1145/3440943.3444741"
 - id: pub-050
   type: conference
-  authors: "Joochan Lee, Hyunpyo Choi, Jiho Shin, Jungtaek Seo"
+  authors: "Joochan Lee, Hyunpyo Choi, Jiho Shin, Jung Taek Seo"
   title: "Detection and Analysis Technique for Manipulation Attacks on PLC Control Logic"
   venue: "International Conference on Intelligent Computing and its Emerging Applications (ICEA)"
   year: 2020
   url: "https://doi.org/10.1145/3440943.3444742"
 - id: pub-051
   type: conference
-  authors: "Janghoon Kim, Hyunpyo Choi, Jiho Shin, Jungtaek Seo"
+  authors: "Janghoon Kim, Hyunpyo Choi, Jiho Shin, Jung Taek Seo"
   title: "Study on Anomaly Detection Technique in an Industrial Control System Based on Machine Learning"
   venue: "International Conference on Intelligent Computing and its Emerging Applications (ICEA)"
   year: 2020
@@ -454,7 +454,7 @@
   url: "https://doi.org/10.22648/ETRI.2019.J.340110"
 - id: pub-056
   type: misc
-  authors: "이상윤, 염경록, 신지호 외"
+  authors: "이상윤, 염경록, 신지호, 방준성, 김승희, 박영수, 박원주, 이용태"
   title: "치안정보 데이터뱅크 구축을 위한 민감정보 비식별화 방안 연구"
   venue: "정보및제어논문집"
   year: 2018

@@ -8,12 +8,12 @@ const sections = getResearchDetail('en');
   locale="en"
   active="research"
   path="research"
-  title="Research Areas | DFS Lab"
-  description="DFS Lab's four research areas: data recovery, applications & systems, cloud, and evidence verification."
+  title="Research | DFS Lab"
+  description="DFS Lab's five research areas: data recovery, applications & systems, cloud, evidence verification, and incident response."
 >
   <div class="wrap">
-    <h1>Research Areas</h1>
-    <p class="intro">We locate the data left behind on digital devices and services, and verify whether it holds up as digital evidence. Our work is organized around the four questions below.</p>
+    <h1>Research</h1>
+    <p class="intro">We locate the data left behind on digital devices and services, and verify whether it holds up as digital evidence. Our work is organized around the five questions below.</p>
     {sections.map((s) => (
       <section id={s.key} class="area">
         <span class="mono area-label">{s.label}</span>

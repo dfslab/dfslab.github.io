@@ -70,5 +70,23 @@ export function getResearchDetail(locale) {
             'This covers verifying the accuracy of analysis tool results, ensuring the integrity of digital evidence through hashing and imaging procedures, standardizing procedures from collection through analysis, and detecting anti-forensic techniques such as data hiding, deletion, and tampering.',
           ],
     },
+    {
+      // 2026-09-27 소장 지적으로 추가: 해킹·악성코드 분석이 빠져 있던 영역. 홈 카드에는 넣지 않고
+      // 이 페이지에만 다섯 번째 분야로 추가. 영문은 팀장 초안(draft).
+      key: 'incident',
+      label: isKo ? '침해사고 대응' : 'Incident Response',
+      heading: isKo
+        ? '공격자는 어떻게 들어와 무엇을 남겼는가'
+        : 'How did the attacker get in, and what did they leave behind?',
+      body: isKo
+        ? [
+            '해킹과 악성코드 감염 같은 침해사고에서 공격 경로와 피해 범위를 밝히는 사고 대응 포렌식을 연구합니다.',
+            '악성코드의 동작과 지속 방법 분석, 시스템과 네트워크 로그를 이용한 공격 타임라인 재구성, 침해 지표(IoC) 추출, 랜섬웨어 피해 시스템의 조사와 복구를 다룹니다.',
+          ]
+        : [
+            'We study incident response forensics, which uncovers the attack path and scope of damage in security incidents such as hacking and malware infections.',
+            'This covers analyzing malware behavior and persistence mechanisms, reconstructing attack timelines from system and network logs, extracting indicators of compromise (IoCs), and investigating and recovering systems affected by ransomware.',
+          ],
+    },
   ];
 }
