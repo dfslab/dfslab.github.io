@@ -11,6 +11,11 @@ interface Pub {
   pages?: string;
   award?: string;
   url?: string;
+  // 영문판 표기(국내 논문). 없으면 원문 표기를 그대로 쓴다.
+  authors_en?: string;
+  title_en?: string;
+  venue_en?: string;
+  award_en?: string;
 }
 interface Props {
   locale: 'ko' | 'en';
@@ -24,7 +29,19 @@ const FILTER_LABEL: Record<string, string> = isKo
   ? { all: '전체', journal: '학술지(Article)', conference: '학술대회(Conference)', misc: '기타(Report)' }
   : { all: 'All', journal: 'Article', conference: 'Conference', misc: 'Report' };
 
-const sorted = [...publications].sort((a, b) => b.year - a.year);
+// 영문판에서는 영문 표기 필드가 있으면 그것을 쓴다(2026-09-27).
+const localized = publications.map((p) =>
+  isKo
+    ? p
+    : {
+        ...p,
+        authors: p.authors_en || p.authors,
+        title: p.title_en || p.title,
+        venue: p.venue_en || p.venue,
+        award: p.award_en || p.award,
+      }
+);
+const sorted = [...localized].sort((a, b) => b.year - a.year);
 
 const years = Array.from(new Set(sorted.map((p) => p.year)));
 
