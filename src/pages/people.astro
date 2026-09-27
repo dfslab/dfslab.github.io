@@ -43,6 +43,7 @@ const { professor, researchers } = getPeople();
             <div class="researcher-body">
               <h3>{r.name_ko} <span class="muted">({r.name_en})</span></h3>
               <p class="status">{r.status_ko}</p>
+              <p class="affil">목원대학교 컴퓨터융합학부</p>
               <p class="interests-label">연구 관심분야</p>
               <ul>{r.interests_ko.map((i: string) => <li>{i}</li>)}</ul>
               <p class="email"><a href={`mailto:${r.email}`}>{r.email}</a></p>
@@ -80,13 +81,15 @@ const { professor, researchers } = getPeople();
   @media (min-width: 720px) { .researcher-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   .researcher { display: flex; gap: 16px; align-items: flex-start; }
   .researcher-photo {
-    width: 96px;
-    height: 96px;
+    width: 108px;
+    height: 132px; /* 원본 증명사진 비율(532x648)에 맞춰 머리·어깨가 잘리지 않게 */
     object-fit: cover;
+    object-position: 50% 50%;
     border: 1px solid var(--border);
     flex-shrink: 0;
   }
   .researcher-body { min-width: 0; }
   .researcher .status { color: var(--text-muted); font-size: 14px; margin-top: -8px; }
+  .researcher .affil { color: var(--text-muted); font-size: 14px; margin-top: -4px; }
   .interests-label { font-size: 13px; color: var(--text-muted); margin: 12px 0 4px; }
 </style>
