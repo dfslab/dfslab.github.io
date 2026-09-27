@@ -74,18 +74,18 @@ export function getResearchDetail(locale) {
       // 2026-09-27 소장 지적으로 추가: 해킹·악성코드 분석이 빠져 있던 영역. 홈 카드에는 넣지 않고
       // 이 페이지에만 다섯 번째 분야로 추가. 영문은 팀장 초안(draft).
       key: 'incident',
-      label: isKo ? '침해사고 대응' : 'Incident Response',
+      label: isKo ? '침해사고 포렌식' : 'Incident Response Forensics',
       heading: isKo
         ? '공격자는 어떻게 들어와 무엇을 남겼는가'
         : 'How did the attacker get in, and what did they leave behind?',
       body: isKo
         ? [
-            '해킹과 악성코드 감염 같은 침해사고에서 공격 경로와 피해 범위를 밝히는 사고 대응 포렌식을 연구합니다.',
-            '악성코드의 동작과 지속 방법 분석, 시스템과 네트워크 로그를 이용한 공격 타임라인 재구성, 침해 지표(IoC) 추출, 랜섬웨어 피해 시스템의 조사와 복구를 다룹니다.',
+            '침해사고 대응은 디지털포렌식의 대표적인 응용 분야로, 흔히 DFIR(Digital Forensics and Incident Response)라고 부릅니다. 해킹과 악성코드 감염이 일어난 시스템에서 포렌식 기법으로 공격 경로와 피해 범위를 밝힙니다.',
+            '메모리와 디스크에 남은 악성코드 흔적 분석, 운영체제 아티팩트와 로그를 이용한 공격 타임라인 재구성, 침해 지표(IoC) 추출, 랜섬웨어 피해 시스템의 조사와 복구, 그리고 수사와 소송에 쓸 수 있도록 디지털 증거를 보존하는 절차를 다룹니다.',
           ]
         : [
-            'We study incident response forensics, which uncovers the attack path and scope of damage in security incidents such as hacking and malware infections.',
-            'This covers analyzing malware behavior and persistence mechanisms, reconstructing attack timelines from system and network logs, extracting indicators of compromise (IoCs), and investigating and recovering systems affected by ransomware.',
+            'Incident response is one of the main applications of digital forensics, commonly called DFIR (Digital Forensics and Incident Response). We apply forensic techniques to systems hit by hacking or malware to uncover the attack path and the scope of damage.',
+            'This covers analyzing malware traces in memory and on disk, reconstructing attack timelines from operating system artifacts and logs, extracting indicators of compromise (IoCs), investigating and recovering ransomware-affected systems, and preserving digital evidence so it can be used in investigations and litigation.',
           ],
     },
   ];
