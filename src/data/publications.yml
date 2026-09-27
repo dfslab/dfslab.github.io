@@ -324,7 +324,7 @@
   venue: "한국디지털포렌식학회 하계학술대회"
   year: 2026
   authors_en: "Yejun Shin, Jiho Shin"
-  title_en: "Analysis of Local Data Storage Structures and Conversation History Recovery Techniques for Generative AI Desktop Applications"
+  title_en: "A Study on Local Data Storage Structure Analysis and Conversation History Reconstruction in Generative AI Applications"
   venue_en: "Korea Digital Forensics Society Summer Conference 2026"
 - id: pub-031
   type: conference
@@ -335,7 +335,7 @@
   award: "한국디지털포렌식학회장상"
   award_en: "President's Award, Korean Digital Forensics Society"
   authors_en: "Hyeonbin Park, Jiho Shin"
-  title_en: "Analysis of WebRTC-Based Chrome Remote Desktop (CRD) Environments from an Anti-Forensics Perspective: Tracing Artifacts of the Controlled PC via the Controlling PC"
+  title_en: "A Forensic Approach to Tracing Target PC Artifacts via the Host PC in Chrome Remote Desktop under Anti-Forensics Scenarios"
   venue_en: "Korea Digital Forensics Society Summer Conference 2026"
 - id: pub-032
   type: conference
