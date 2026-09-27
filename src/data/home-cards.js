@@ -1,4 +1,4 @@
-// 홈 화면 연구 분야 카드 4개 (시안 "G2 연구 분야 질문" 원본 이관)
+// 홈 화면 연구 분야 카드 5개(2026-09-27 침해사고 포렌식 추가) (시안 "G2 연구 분야 질문" 원본 이관)
 // 아이콘 그리드(애플리케이션/클라우드)는 순서 고정, alt만 로케일별로 다름.
 // 영문(en) 문구는 팀장 초안이며 소장 검토 대상(draft).
 export const DRAFT_EN = true;
@@ -59,6 +59,16 @@ export function getHomeCards(locale) {
       heading: isKo ? '분석 결과를 믿을 수 있다는 것을 어떻게 증명하는가' : 'How do we prove that analysis results can be trusted?',
       sub: isKo ? '분석 도구와 절차의 신뢰성, 안티포렌식 탐지' : 'Reliability of tools and procedures, anti-forensics detection',
       dark: true,
+    },
+    {
+      key: 'incident',
+      kind: 'image',
+      image: '/images/research/incident.png',
+      alt: isKo ? '2017년 Petya 랜섬웨어에 감염된 컴퓨터 화면' : 'Screen of a computer infected by the 2017 Petya ransomware',
+      label: isKo ? '침해사고 포렌식' : 'Incident Response Forensics',
+      heading: isKo ? '공격자는 어떻게 들어와 무엇을 남겼는가' : 'How did the attacker get in, and what did they leave behind?',
+      sub: isKo ? '악성코드 분석, 공격 타임라인, 랜섬웨어 조사' : 'Malware analysis, attack timelines, ransomware investigation',
+      dark: false,
     },
   ];
 }
