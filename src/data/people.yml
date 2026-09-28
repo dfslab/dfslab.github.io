@@ -17,13 +17,14 @@ professor:
     - "Assistant Professor, Division of Computer Science Convergence, Mokwon University"
   # 2026-09-27 소장 댓글 반영: 안전연구사·경찰연구관 직명, 정보보호학과 명칭 수정.
   # 2026-09-27 소장 결재: 국문 "연구사", 영문 "Research Fellow"로 확정.
+  # 2026-09-28 소장 결재: 경찰대 직명 국문 "경찰연구원", 영문 "Research Officer"(개인 CV 페이지와 통일).
   experience_ko:
     - "연구사, 치안정책연구소 과학수사연구부 사이버범죄연구센터"
-    - "경찰연구관, 경찰대학교 국제사이버범죄연구센터"
+    - "경찰연구원, 경찰대학교 국제사이버범죄연구센터"
     - "사이버범죄수사관 및 포렌식분석관, 경기남부지방경찰청"
   experience_en:
     - "Research Fellow, Cyber Crime Research Center, Division of Scientific Investigation, Police Science Institute"
-    - "Research Police Officer, International Cybercrime Research Center, Korean National Police Univ."
+    - "Research Officer, International Cybercrime Research Center, Korean National Police Univ."
     - "Cybercrime Investigator & Forensics Analyst, Gyeonggi Nambu Provincial Police Agency"
   experience_en_draft: false
   education_ko:
