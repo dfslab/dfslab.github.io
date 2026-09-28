@@ -21,6 +21,7 @@ const { professor, researchers } = getPeople();
         <div class="prof-detail">
           <h3>{professor.name_ko} <span class="muted">({professor.name_en})</span></h3>
           <p class="email"><a href={`mailto:${professor.email}`}>{professor.email}</a></p>
+          <p class="cv-link"><a href={professor.cv_url_ko} target="_blank" rel="noopener noreferrer">CV 보기 ↗</a></p>
 
           <h4>소속</h4>
           <ul>{professor.affiliation_ko.map((a: string) => <li>{a}</li>)}</ul>
@@ -62,6 +63,7 @@ const { professor, researchers } = getPeople();
   ul { margin: 0; padding-left: 20px; color: var(--text-muted-2); }
   li { margin-bottom: 4px; }
   .email { margin-top: 12px; }
+  .cv-link { margin-top: 4px; font-weight: 600; }
 
   .prof-layout { display: flex; flex-direction: column; gap: 20px; margin-top: 16px; }
   @media (min-width: 720px) {

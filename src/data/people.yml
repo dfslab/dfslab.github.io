@@ -11,6 +11,8 @@ professor:
   photo_alt_ko: "신지호 교수 사진"
   photo_alt_en: "Photo of Professor Jiho Shin"
   email: "suchme@gmail.com"
+  cv_url_ko: "https://j1h0.github.io/"
+  cv_url_en: "https://j1h0.github.io/en/"
   affiliation_ko:
     - "조교수, 목원대학교 컴퓨터융합학부"
   affiliation_en:
