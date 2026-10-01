@@ -1,8 +1,8 @@
 # DFS Lab 구성원 목록
 # 출처: https://sites.google.com/view/dfslab/member (2026-09-26 curl 수집)
 # affiliation_en/experience_en/education_en은 원문(영문 사이트) 그대로.
-# affiliation_ko/experience_ko/education_ko는 팀장이 새로 옮긴 국문 번역이며 draft: true(소장 검토 대상).
-# 교수 직함 옆 "Director, DFSL"(직역 시 "실장")은 조직 호칭 혼선을 피해 국문판에서 제외함(정팀장 판단, 소장 보고 대상). 영문판은 원문 그대로 유지.
+# affiliation_ko/experience_ko/education_ko는 새로 옮긴 국문 번역이며 draft: true(교수 검토 대상).
+# 교수 직함 옆 "Director, DFSL"은 국문판에서 제외함. 영문판은 원문 그대로 유지.
 draft_ko_translation: true
 professor:
   name_ko: "신지호"
@@ -17,9 +17,9 @@ professor:
     - "조교수, 목원대학교 컴퓨터융합학부"
   affiliation_en:
     - "Assistant Professor, Division of Computer Science Convergence, Mokwon University"
-  # 2026-09-27 소장 댓글 반영: 안전연구사·경찰연구관 직명, 정보보호학과 명칭 수정.
-  # 2026-09-27 소장 결재: 국문 "연구사", 영문 "Research Fellow"로 확정.
-  # 2026-09-28 소장 결재: 경찰대 직명 국문 "경찰연구원", 영문 "Research Police Officer"(개인 CV 편집본과 통일).
+  # 2026-09-27 교수 검토 반영: 안전연구사·경찰연구관 직명, 정보보호학과 명칭 수정.
+  # 2026-09-27 교수 확정: 국문 "연구사", 영문 "Research Fellow"로 확정.
+  # 2026-09-28 교수 확정: 경찰대 직명 국문 "경찰연구원", 영문 "Research Police Officer"(개인 CV 편집본과 통일).
   experience_ko:
     - "연구사, 치안정책연구소 과학수사연구부 사이버범죄연구센터"
     - "경찰연구원, 경찰대학교 국제사이버범죄연구센터"

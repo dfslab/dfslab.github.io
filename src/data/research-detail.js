@@ -1,6 +1,6 @@
 // 연구분야 페이지: 홈 카드 4개를 확장한 상세 설명.
-// 국문 문구는 소장 검토를 거쳐 실장이 확정한 문장(2026-09-27 반영, 그대로 사용).
-// 영문(en) 문장은 이 국문에 맞춰 팀장이 다시 옮긴 초안이며 소장 검토 대상(draft).
+// 국문 문구는 교수 검토를 거쳐 확정한 문장(2026-09-27 반영, 그대로 사용).
+// 영문(en) 문장은 이 국문에 맞춰 다시 옮긴 초안이며 교수 검토 대상(draft).
 export const DRAFT_EN = true;
 
 export function getResearchDetail(locale) {
@@ -23,8 +23,8 @@ export function getResearchDetail(locale) {
           ],
     },
     {
-      // 2026-09-27 소장 지적으로 추가: 해킹·악성코드 분석이 빠져 있던 영역. 홈 카드에는 넣지 않고
-      // 이 페이지에만 다섯 번째 분야로 추가. 영문은 팀장 초안(draft).
+      // 2026-09-27 교수 검토로 추가: 해킹·악성코드 분석이 빠져 있던 영역. 홈 카드에는 넣지 않고
+      // 이 페이지에만 다섯 번째 분야로 추가. 영문은 초안(draft).
       key: 'incident',
       label: isKo ? '침해사고 포렌식' : 'Incident Response Forensics',
       heading: isKo

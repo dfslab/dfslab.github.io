@@ -183,7 +183,7 @@ nav.site-nav a.lang { color: var(--text-muted); font-size: 13px; }
   font-weight: 600;
   padding: 2px 7px;
   border-radius: 3px;
-  /* 2026-09-27 소장 지시: 눈에 띄게 붉은 계열(흰 글자 대비 5.6:1) */
+  /* 2026-09-27: 눈에 띄게 붉은 계열(흰 글자 대비 5.6:1) */
   background: #c62828;
   border: 1px solid #c62828;
   color: #ffffff;
