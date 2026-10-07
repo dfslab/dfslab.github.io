@@ -40,7 +40,8 @@ html, body {
   margin: 0;
   padding: 0;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: hidden; /* clip 미지원 브라우저용 */
+  overflow-x: clip; /* hidden은 스크롤 상자를 만들어 상단 메뉴 고정(sticky)을 깨뜨린다 */
 }
 
 body {
@@ -74,7 +75,15 @@ img { max-width: 100%; display: block; }
 
 header.site-header {
   border-bottom: 1px solid var(--border);
+  /* 2026-10-07: 스크롤해도 상단 메뉴가 계속 보이게 고정 */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
 }
+
+/* 고정 메뉴에 가려지지 않게 페이지 안 이동(#앵커) 위치를 메뉴 높이만큼 내린다 */
+html { scroll-padding-top: 88px; }
 
 .header-inner {
   position: relative;

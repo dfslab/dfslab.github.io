@@ -56,3 +56,13 @@ researchers:
     interests_ko: ["디지털포렌식", "제어시스템(ICS) 보안"]
     interests_en: ["Digital forensics", "ICS Security"]
     email: "joon27310@gmail.com"
+  - name_ko: "송정현"
+    name_en: "Jeonghyun Song"
+    photo: "/images/people/placeholder-person.svg"
+    photo_alt_ko: "송정현 연구원 사진 준비 중"
+    photo_alt_en: "Photo of researcher Jeonghyun Song (coming soon)"
+    status_ko: "학부연구생"
+    status_en: "Undergraduate Course"
+    interests_ko: ["서버·시스템 보안", "디지털포렌식"]
+    interests_en: ["Server & System Security", "Digital forensics"]
+    email: "thd20030814@gmail.com"
