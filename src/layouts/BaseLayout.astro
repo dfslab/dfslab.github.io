@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   locale: 'ko' | 'en';
@@ -26,6 +27,31 @@ const { locale, active, path = '', title, description } = Astro.props as Props;
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap"
   />
+  <ClientRouter />
+  <script is:inline>
+    // 국문↔영문 전환 때 읽던 위치(비율)를 유지한다. 화면 전환으로 다시 실행돼도 한 번만 건다.
+    (function () {
+      if (window.__langKeep) return;
+      window.__langKeep = true;
+      document.addEventListener('click', function (e) {
+        var a = e.target && e.target.closest && e.target.closest('a[data-lang-switch]');
+        if (!a) return;
+        try {
+          var max = document.documentElement.scrollHeight - window.innerHeight;
+          sessionStorage.setItem('langScroll', String(max > 0 ? window.scrollY / max : 0));
+        } catch (_) {}
+      }, true);
+      document.addEventListener('astro:page-load', function () {
+        var r = null;
+        try { r = sessionStorage.getItem('langScroll'); sessionStorage.removeItem('langScroll'); } catch (_) {}
+        if (r === null) return;
+        requestAnimationFrame(function () {
+          var max = document.documentElement.scrollHeight - window.innerHeight;
+          window.scrollTo(0, Math.round(parseFloat(r) * max));
+        });
+      });
+    })();
+  </script>
 </head>
 <body>
   <a href="#main" class="skip-link">{locale === 'ko' ? '본문으로 건너뛰기' : 'Skip to content'}</a>

@@ -92,29 +92,28 @@ function citation(p: Pub) {
 </div>
 
 <script>
-  const wrap = document.getElementById('pub-filters');
-  const list = document.getElementById('pub-list');
-  if (wrap && list) {
-    wrap.addEventListener('click', (e) => {
-      const btn = (e.target as HTMLElement).closest('.pub-filter-btn') as HTMLElement | null;
-      if (!btn) return;
-      const filter = btn.dataset.filter;
-      wrap.querySelectorAll('.pub-filter-btn').forEach((b) => b.setAttribute('aria-pressed', 'false'));
-      btn.setAttribute('aria-pressed', 'true');
-      list.querySelectorAll('.pub-item').forEach((item) => {
-        const el = item as HTMLElement;
-        const show = filter === 'all' || el.dataset.type === filter;
-        el.style.display = show ? '' : 'none';
-      });
-      list.querySelectorAll('.pub-year').forEach((sec) => {
-        const el = sec as HTMLElement;
-        const anyVisible = Array.from(el.querySelectorAll('.pub-item')).some(
-          (item) => (item as HTMLElement).style.display !== 'none'
-        );
-        el.style.display = anyVisible ? '' : 'none';
-      });
+  // 화면 전환(ClientRouter) 뒤에도 동작하도록 문서 전체에 한 번만 건다.
+  document.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest('#pub-filters .pub-filter-btn') as HTMLElement | null;
+    const wrap = document.getElementById('pub-filters');
+    const list = document.getElementById('pub-list');
+    if (!btn || !wrap || !list) return;
+    const filter = btn.dataset.filter;
+    wrap.querySelectorAll('.pub-filter-btn').forEach((b) => b.setAttribute('aria-pressed', 'false'));
+    btn.setAttribute('aria-pressed', 'true');
+    list.querySelectorAll('.pub-item').forEach((item) => {
+      const el = item as HTMLElement;
+      const show = filter === 'all' || el.dataset.type === filter;
+      el.style.display = show ? '' : 'none';
     });
-  }
+    list.querySelectorAll('.pub-year').forEach((sec) => {
+      const el = sec as HTMLElement;
+      const anyVisible = Array.from(el.querySelectorAll('.pub-item')).some(
+        (item) => (item as HTMLElement).style.display !== 'none'
+      );
+      el.style.display = anyVisible ? '' : 'none';
+    });
+  });
 </script>
 
 <style>

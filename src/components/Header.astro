@@ -35,7 +35,7 @@ const other = otherLocale(locale);
           )}
         </a>
       ))}
-      <a href={localeHref(other, path)} class="lang" hreflang={other} lang={other}>
+      <a href={localeHref(other, path)} class="lang" hreflang={other} lang={other} data-lang-switch data-astro-prefetch="viewport">
         {other === 'en' ? 'EN' : 'KO'}
       </a>
     </nav>
@@ -54,20 +54,22 @@ const other = otherLocale(locale);
 </header>
 
 <script>
-  const headerEls = document.querySelectorAll('.nav-toggle');
-  headerEls.forEach((btn) => {
+  // 화면 전환(ClientRouter)으로 본문이 바뀌어도 동작하도록 문서 전체에 한 번만 건다.
+  document.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest('.nav-toggle') as HTMLElement | null;
+    if (!btn) return;
     const nav = btn.closest('.header-inner')?.querySelector('.site-nav');
     if (!nav) return;
-    btn.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', String(isOpen));
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && nav.classList.contains('open')) {
-        nav.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-        (btn as HTMLElement).focus();
-      }
-    });
+    const isOpen = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    const nav = document.querySelector('.site-nav.open');
+    if (!nav) return;
+    nav.classList.remove('open');
+    const btn = nav.closest('.header-inner')?.querySelector('.nav-toggle') as HTMLElement | null;
+    btn?.setAttribute('aria-expanded', 'false');
+    btn?.focus();
   });
 </script>
