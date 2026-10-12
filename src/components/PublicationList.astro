@@ -29,7 +29,7 @@ const FILTER_LABEL: Record<string, string> = isKo
   ? { all: '전체', journal: '학술지(Article)', conference: '학술대회(Conference)', misc: '기타(Report)' }
   : { all: 'All', journal: 'Article', conference: 'Conference', misc: 'Report' };
 
-// 영문판에서는 영문 표기 필드가 있으면 그것을 쓴다(2026-09-27).
+// 영문판에서는 영문 표기 필드가 있으면 그것을 쓴다.
 const localized = publications.map((p) =>
   isKo
     ? p

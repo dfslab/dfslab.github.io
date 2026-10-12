@@ -87,8 +87,8 @@ const cards = getHomeCards(locale);
   .rcard-dark .rcard-sub { color: var(--muted-invert); }
 </style>
 
-<!-- 도식은 set:html로 넣어 범위 지정이 붙지 않으므로 전역 스타일로 둔다. -->
 <style is:global>
+  /* 도식은 set:html로 넣어 범위 지정이 붙지 않으므로 전역 스타일로 둔다. */
   .rcard-dg svg { width: 100%; height: 100%; display: block; }
   .dg-t { font-family: 'IBM Plex Mono', monospace; font-size: 8.5px; fill: currentColor; }
   .dg-b { font-weight: 600; }

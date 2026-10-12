@@ -28,6 +28,7 @@ const other = otherLocale(locale);
         <a
           href={localeHref(locale, item.path)}
           class={`${item.key === active ? 'active' : ''} ${item.key === 'join' ? 'recruit' : ''}`}
+          data-recruit-closed={item.key === 'join' && !siteConfig.recruiting ? siteConfig.recruitClosed[locale] : undefined}
         >
           {locale === 'ko' ? item.ko : item.en}
           {item.key === 'join' && siteConfig.recruiting && (
@@ -54,6 +55,14 @@ const other = otherLocale(locale);
 </header>
 
 <script>
+  // 모집 기간이 아니면 '연구원 모집' 메뉴는 안내 창만 띄우고 이동하지 않는다.
+  document.addEventListener('click', (e) => {
+    const a = (e.target as HTMLElement).closest('a[data-recruit-closed]') as HTMLElement | null;
+    if (!a) return;
+    e.preventDefault();
+    e.stopPropagation();
+    alert(a.dataset.recruitClosed);
+  }, true);
   // 화면 전환(ClientRouter)으로 본문이 바뀌어도 동작하도록 문서 전체에 한 번만 건다.
   document.addEventListener('click', (e) => {
     const btn = (e.target as HTMLElement).closest('.nav-toggle') as HTMLElement | null;

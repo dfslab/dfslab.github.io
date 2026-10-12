@@ -1,4 +1,4 @@
-// 홈 화면 연구 분야 카드 5개의 도식(2026-10-12 사진·로고에서 단색 선 도식으로 교체).
+// 홈 화면 연구 분야 카드 5개의 단색 선 도식.
 // 색은 ResearchCardGrid.astro의 .dg-* 클래스가 사이트 색상 변수로 입힌다. 그림 속 값은 예시다.
 const open = '<svg viewBox="0 0 240 170" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true">';
 const T = (x, y, s, cls = 'dg-t', anchor = 'start') => `<text x="${x}" y="${y}" class="${cls}" text-anchor="${anchor}">${s}</text>`;

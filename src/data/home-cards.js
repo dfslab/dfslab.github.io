@@ -1,7 +1,5 @@
-// 홈 화면 연구 분야 카드 5개(2026-09-27 침해사고 포렌식 추가) (시안 "G2 연구 분야 질문" 원본 이관)
-// 카드 위쪽 그림은 home-diagrams.js의 단색 선 도식(2026-10-12 교체). alt는 그 도식의 설명이다.
-// 영문(en) 문구는 초안이며 교수 검토 대상(draft).
-export const DRAFT_EN = true;
+// 홈 화면 연구 분야 카드 5개.
+// 카드 위쪽 그림은 home-diagrams.js의 단색 선 도식이다. alt는 그 도식의 설명이다.
 
 export function getHomeCards(locale) {
   const isKo = locale === 'ko';

@@ -1,6 +1,5 @@
 # DFS Lab 프로젝트 목록
-# 출처: https://sites.google.com/view/dfslab/project (2026-09-26 curl 수집)
-# 원문 그대로 이관. status: ongoing(진행) | closed(종료)
+# status: ongoing(진행) | closed(종료)
 - id: proj-001
   status: ongoing
   title: "고위공직자 범죄 및 AI 악용 대응을 위한 실전형 디지털포렌식 교육 콘텐츠 개발 사업"

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ResearchCardGrid from '../components/ResearchCardGrid.astro';
+import RecruitPopup from '../components/RecruitPopup.astro';
 import { getPublications } from '../lib/data.js';
 
 const publications = getPublications();
@@ -20,6 +21,7 @@ const publications = getPublications();
     <ResearchCardGrid locale="ko" />
     <a href="/research" class="more-link">연구 주제 전체와 논문 {publications.length}편</a>
   </div>
+  <RecruitPopup />
 </BaseLayout>
 
 <style>

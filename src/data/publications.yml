@@ -1,6 +1,5 @@
 # DFS Lab 논문 목록
-# 출처: https://sites.google.com/view/dfslab/publication (2026-09-26 curl 수집)
-# 원문 그대로 이관, 요약/축약 없음. type: journal|conference|misc
+# type: journal|conference|misc
 - id: pub-001
   type: journal
   authors: "Jiho Shin, Byoung Hun Moon"
@@ -325,7 +324,7 @@
   year: 2026
   authors_en: "Yejun Shin, Jiho Shin"
   title_en: "A Study on Local Data Storage Structure Analysis and Conversation History Reconstruction in Generative AI Applications"
-  venue_en: "Korea Digital Forensics Society Summer Conference 2026"
+  venue_en: "Korean Digital Forensics Society Summer Conference 2026"
 - id: pub-031
   type: conference
   authors: "박현빈, 신지호"
@@ -336,7 +335,7 @@
   award_en: "President's Award, Korean Digital Forensics Society"
   authors_en: "Hyeonbin Park, Jiho Shin"
   title_en: "A Forensic Approach to Tracing Target PC Artifacts via the Host PC in Chrome Remote Desktop under Anti-Forensics Scenarios"
-  venue_en: "Korea Digital Forensics Society Summer Conference 2026"
+  venue_en: "Korean Digital Forensics Society Summer Conference 2026"
 - id: pub-032
   type: conference
   authors: "Donghyun Kim, Seungho Jeon, Jiho Shin, Jung Taek Seo"

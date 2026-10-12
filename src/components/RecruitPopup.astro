@@ -1,0 +1,93 @@
+---
+// 모집 기간에 홈 화면에 띄우는 포스터 팝업. '오늘 하루 보지 않기'는 방문자 브라우저에만 기록한다.
+import { siteConfig } from '../lib/site-config.js';
+---
+{siteConfig.recruiting && (
+  <div class="rpop" data-recruit-popup hidden>
+    <div class="rpop-box" role="dialog" aria-modal="true" aria-label={siteConfig.recruitTitle.ko}>
+      <a href="/join" class="rpop-poster">
+        <img src={siteConfig.recruitPoster} alt={siteConfig.recruitTitle.ko} width="1500" height="2121" />
+      </a>
+      <div class="rpop-bar">
+        <button type="button" data-rpop-today>오늘 하루 보지 않기</button>
+        <a href="/join">모집 안내 보기</a>
+        <button type="button" data-rpop-close>닫기</button>
+      </div>
+    </div>
+  </div>
+)}
+
+<script is:inline>
+  (function () {
+    function today() { var d = new Date(); return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate(); }
+    function hide(el) { el.hidden = true; }
+    document.addEventListener('astro:page-load', function () {
+      var el = document.querySelector('[data-recruit-popup]');
+      if (!el) return;
+      var seen = null;
+      try { seen = localStorage.getItem('recruitPopupHide'); } catch (_) {}
+      if (seen === today()) return;
+      el.hidden = false;
+      el.querySelector('[data-rpop-close]').focus();
+    });
+    if (window.__rpop) return;
+    window.__rpop = true;
+    document.addEventListener('click', function (e) {
+      var el = document.querySelector('[data-recruit-popup]');
+      if (!el || el.hidden) return;
+      var t = e.target;
+      if (t.closest('[data-rpop-today]')) { try { localStorage.setItem('recruitPopupHide', today()); } catch (_) {} hide(el); }
+      else if (t.closest('[data-rpop-close]') || t === el) hide(el);
+    });
+    document.addEventListener('keydown', function (e) {
+      var el = document.querySelector('[data-recruit-popup]');
+      if (e.key === 'Escape' && el && !el.hidden) hide(el);
+    });
+  })();
+</script>
+
+<style>
+  .rpop {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(10, 12, 16, 0.62);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  .rpop[hidden] { display: none; }
+  .rpop-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    width: min(440px, 100%);
+  }
+  .rpop-poster { display: block; overflow: auto; min-height: 0; }
+  .rpop-poster img { display: block; width: 100%; height: auto; }
+  .rpop-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 14px;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .rpop-bar a { font-weight: 600; }
+  .rpop-bar button {
+    background: none;
+    border: 0;
+    padding: 6px 2px;
+    font: inherit;
+    color: var(--text-muted);
+    cursor: pointer;
+  }
+  @media (min-height: 760px) {
+    .rpop-box { width: min(480px, 100%); }
+  }
+</style>
