@@ -1,5 +1,6 @@
 ---
 import { getHomeCards } from '../data/home-cards.js';
+import { HOME_DIAGRAMS } from '../data/home-diagrams.js';
 import { localeHref } from '../lib/nav.js';
 
 interface Props {
@@ -11,18 +12,7 @@ const cards = getHomeCards(locale);
 <section class="card-grid">
   {cards.map((card) => (
     <a href={`${localeHref(locale, 'research')}#${card.key}`} class={`rcard ${card.dark ? 'rcard-dark' : ''}`}>
-      {card.kind === 'image' && (
-        <img src={card.image} alt={card.alt} class="rcard-media" loading="lazy" />
-      )}
-      {card.kind === 'icons' && (
-        <div class="rcard-icons" style={`grid-template-columns: repeat(${card.iconCols || 4}, minmax(0, 1fr));`}>
-          {card.icons.map((icon) => (
-            <div class="rcard-icon-tile">
-              <img src={icon.file} alt={locale === 'ko' ? icon.ko : icon.en} loading="lazy" />
-            </div>
-          ))}
-        </div>
-      )}
+      <div class="rcard-dg" role="img" aria-label={card.alt} set:html={HOME_DIAGRAMS[card.key]} />
       <div class="rcard-body">
         <span class="mono rcard-label">{card.label}</span>
         <span class="rcard-heading">{card.heading}</span>
@@ -57,33 +47,19 @@ const cards = getHomeCards(locale);
     color: var(--invert-text);
     border-color: var(--invert-bg);
   }
-  .rcard-media {
-    width: 100%;
+  .rcard-dg {
     height: 170px;
-    object-fit: cover;
     border-bottom: 1px solid var(--border-soft);
-  }
-  .rcard-icons {
-    height: 170px;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
-    gap: 1px;
-    /* 로고 타일 배경은 라이트/다크 모드와 무관하게 항상 흰색으로 고정한다(어두운 배경에서
-       검정 워드마크 로고가 안 보이는 문제 방지). */
-    background: #e4e6ea;
-    border-bottom: 1px solid #e4e6ea;
-  }
-  .rcard-icon-tile {
-    background: #ffffff;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    color: var(--text);
+    --ac: var(--link);
+    --mu: color-mix(in srgb, currentColor 35%, transparent);
+    --acbg: color-mix(in srgb, var(--ac) 12%, transparent);
   }
-  .rcard-icon-tile img {
-    width: 34px;
-    height: 34px;
-    object-fit: contain;
+  .rcard-dark .rcard-dg {
+    color: var(--invert-text);
+    --ac: var(--accent-invert);
+    border-bottom-color: color-mix(in srgb, currentColor 14%, transparent);
   }
   .rcard-body {
     padding: 22px 24px 24px;
@@ -109,4 +85,25 @@ const cards = getHomeCards(locale);
     margin-top: auto;
   }
   .rcard-dark .rcard-sub { color: var(--muted-invert); }
+</style>
+
+<!-- 도식은 set:html로 넣어 범위 지정이 붙지 않으므로 전역 스타일로 둔다. -->
+<style is:global>
+  .rcard-dg svg { width: 100%; height: 100%; display: block; }
+  .dg-t { font-family: 'IBM Plex Mono', monospace; font-size: 8.5px; fill: currentColor; }
+  .dg-b { font-weight: 600; }
+  .dg-tm { fill: var(--mu); }
+  .dg-ta { fill: var(--ac); }
+  .dg-l { stroke: currentColor; stroke-width: 1.2; fill: none; }
+  .dg-la { stroke: var(--ac); stroke-width: 1.6; fill: none; }
+  .dg-m { stroke: var(--mu); stroke-width: 1; fill: none; }
+  .dg-dash { stroke: var(--mu); stroke-width: 1; stroke-dasharray: 3 3; }
+  .dg-nf { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .dg-cell { fill: none; stroke: var(--mu); stroke-width: 1; }
+  .dg-fill { fill: currentColor; }
+  .dg-acc { fill: var(--acbg); stroke: var(--ac); stroke-width: 1.2; stroke-dasharray: 2.5 2; }
+  .dg-box { fill: none; stroke: currentColor; stroke-width: 1.2; }
+  .dg-ring { fill: var(--acbg); stroke: var(--ac); stroke-width: 1.4; }
+  .dg-dot { fill: var(--surface); stroke: currentColor; stroke-width: 1.4; }
+  .dg-dota { fill: var(--ac); }
 </style>
