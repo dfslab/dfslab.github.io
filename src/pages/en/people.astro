@@ -19,7 +19,7 @@ const { professor, researchers } = getPeople();
       <div class="prof-layout">
         <img src={professor.photo} alt={professor.photo_alt_en} class="prof-photo" loading="lazy" />
         <div class="prof-detail">
-          <h3>{professor.name_en} <span class="muted">({professor.name_ko})</span></h3>
+          <h3>{professor.name_en}</h3>
           <p class="email"><a href={`mailto:${professor.email}`}>{professor.email}</a></p>
           <p class="cv-link"><a href={professor.cv_url_en} target="_blank" rel="noopener noreferrer">CV ↗</a></p>
 
@@ -42,7 +42,7 @@ const { professor, researchers } = getPeople();
           <div class="researcher card">
             <img src={r.photo} alt={r.photo_alt_en} class="researcher-photo" loading="lazy" />
             <div class="researcher-body">
-              <h3>{r.name_en} <span class="muted">({r.name_ko})</span></h3>
+              <h3>{r.name_en}</h3>
               <p class="status">{r.status_en}</p>
               <p class="affil">Division of Computer Science Convergence, Mokwon University</p>
               <p class="interests-label">Research Interests</p>
