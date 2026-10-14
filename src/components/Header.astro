@@ -13,7 +13,7 @@ const other = otherLocale(locale);
 ---
 <header class="site-header">
   <div class="wrap header-inner">
-    <a href={localeHref(locale)} class="logo">Digital Forensics &amp; Security Lab</a>
+    <a href={localeHref(locale)} class="logo">{locale === 'ko' ? '디지털포렌식 및 보안 연구실' : 'Digital Forensics & Security Lab'}</a>
     <button
       type="button"
       class="nav-toggle"
